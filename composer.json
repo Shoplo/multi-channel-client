@@ -1,0 +1,15 @@
+{
+  "name": "adrianadamiec/omnisale-client",
+  "version": "1.0",
+  "autoload": {
+    "psr-0": {
+      "Omnisale": "src/"
+    }
+  },
+  "require": {
+    "guzzlehttp/oauth-subscriber": "^0.3.0",
+    "jms/serializer-bundle": "dev-master",
+    "davedevelopment/stiphle": "^0.9.0",
+    "symfony/serializer": "^3.2"
+  }
+}

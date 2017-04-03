@@ -1,0 +1,141 @@
+<?php
+
+namespace Omnisale\Model\Product;
+
+use Omnisale\Parser\StringHelper;
+use JMS\Serializer\Annotation as Serializer;
+
+class OmnisaleProductChannelImage
+{
+    /**
+     * @var int
+     * @Serializer\Type("integer")
+     */
+    public $id;
+
+    /**
+     * @var int
+     * @Serializer\Type("integer")
+     */
+    public $external_id;
+
+    /**
+     * @var int
+     * @Serializer\Type("integer")
+     */
+    public $product_image_id;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    public $title;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    public $src;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    public $original_src;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    public $raw_src;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    public $position;
+
+    /**
+     * @param array $data
+     */
+    public function __construct( Array $data = [] )
+    {
+        if( count($data) )
+        {
+            foreach( $data as $key => $value )
+            {
+                $field = StringHelper::convertStringToCamelCase( $key );
+
+                $setterMethod = 'set' . $field;
+                if( method_exists( $this, $setterMethod ) ){
+                    $value = is_null($value) ? '': $value;
+                    $this->$setterMethod( $value );
+                }
+            }
+        }
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @param int $external_id
+     */
+    public function setExternalId(int $external_id)
+    {
+        $this->external_id = $external_id;
+    }
+
+    /**
+     * @param int $product_image_id
+     */
+    public function setProductImageId(int $product_image_id)
+    {
+        $this->product_image_id = $product_image_id;
+    }
+
+    /**
+     * @param string $title
+     */
+    public function setTitle(string $title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @param string $src
+     */
+    public function setSrc(string $src)
+    {
+        $this->src = $src;
+    }
+
+    /**
+     * @param string $original_src
+     */
+    public function setOriginalSrc(string $original_src)
+    {
+        $this->original_src = $original_src;
+    }
+
+    /**
+     * @param string $raw_src
+     */
+    public function setRawSrc(string $raw_src)
+    {
+        $this->raw_src = $raw_src;
+    }
+
+    /**
+     * @param string $position
+     */
+    public function setPosition(string $position)
+    {
+        $this->position = $position;
+    }
+}
