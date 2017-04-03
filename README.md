@@ -1,0 +1,1 @@
+# omnisale-client
