@@ -43,24 +43,24 @@ class BaseClient
     public function getOrdersUrl($id = 0, $parameters = [])
     {
         $filterParams = empty($parameters) ? '' : '?' . http_build_query($parameters);
-        return $id ? self::SERVER_URI . '/v1/orders/' . $id . $filterParams : self::SERVER_URI . '/v1/orders' . $filterParams;
+        return $id ? self::SERVER_URI . '/v1/public/orders/' . $id . $filterParams : self::SERVER_URI . '/v1/public/orders' . $filterParams;
     }
 
     public function getCustomersUrl($id = 0, $parameters = [])
     {
         $filterParams = empty($parameters) ? '' : '?' . http_build_query($parameters);
-        return $id ? self::SERVER_URI . '/v1/customers/' . $id . $filterParams : self::SERVER_URI . '/v1/customers' . $filterParams;
+        return $id ? self::SERVER_URI . '/v1/public/customers/' . $id . $filterParams : self::SERVER_URI . '/v1/public/customers' . $filterParams;
     }
 
     public function getProductsUrl($id = 0, $parameters = [])
     {
         $filterParams = empty($parameters) ? '' : '?' . http_build_query($parameters);
-        return $id ? self::SERVER_URI . '/v1/products/' . $id . $filterParams : self::SERVER_URI . '/v1/products' . $filterParams;
+        return $id ? self::SERVER_URI . '/v1/public/products/' . $id . $filterParams : self::SERVER_URI . '/v1/public/products' . $filterParams;
     }
 
     public function getUserUrl()
     {
-        return self::SERVER_URI . '/v1/me';
+        return self::SERVER_URI . '/v1/public/me';
     }
 
     public function get( $url, $parameters = [], $headers = [] )
