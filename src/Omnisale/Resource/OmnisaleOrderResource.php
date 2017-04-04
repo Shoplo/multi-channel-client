@@ -37,7 +37,7 @@ class OmnisaleOrderResource
         $response = $this->omnisaleClient->apiClient->get($ordersUrl, $parameters);
 
         $results = [];
-        foreach( $response['_items'] as $k => $v ){
+        foreach( $response['items'] as $k => $v ){
 
             $results[$k] = new OmnisaleOrder($v);
         }

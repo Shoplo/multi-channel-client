@@ -28,6 +28,7 @@ class OmnisaleClient extends BaseClient
     {
         $userUrl = $this->getUserUrl();
         $response = $this->apiClient->get($userUrl);
+
         return new OmnisaleUser($response);
     }
 }

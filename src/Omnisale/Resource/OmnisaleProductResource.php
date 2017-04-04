@@ -25,7 +25,7 @@ class OmnisaleProductResource
         $response = $this->omnisaleClient->apiClient->get($productsUrl, $parameters);
 
         $results = [];
-        foreach( $response['_items'] as $k => $v ){
+        foreach( $response['items'] as $k => $v ){
             $results[$k] = new OmnisaleProduct($v);
             print_r($results[$k]);exit;
         }

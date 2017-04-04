@@ -29,6 +29,24 @@ class OmnisaleUser
      * @var string
      * @Serializer\Type("string")
      */
+    public $source;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    public $lang;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    public $industry;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
     public $first_name;
 
     /**
@@ -38,22 +56,10 @@ class OmnisaleUser
     public $last_name;
 
     /**
-     * @var bool
-     * @Serializer\Type("boolean")
-     */
-    public $is_blankslate_done;
-
-    /**
      * @var string
      * @Serializer\Type("string")
      */
-    public $pass_last_updated;
-
-    /**
-     * @var string[]
-     * @Serializer\Type("array<string>")
-     */
-    public $roles;
+    public $created_at;
 
     /**
      * @param array $data
@@ -100,6 +106,30 @@ class OmnisaleUser
     }
 
     /**
+     * @param string $source
+     */
+    public function setSource(string $source)
+    {
+        $this->source = $source;
+    }
+
+    /**
+     * @param string $lang
+     */
+    public function setLang(string $lang)
+    {
+        $this->lang = $lang;
+    }
+
+    /**
+     * @param string $industry
+     */
+    public function setIndustry(string $industry)
+    {
+        $this->industry = $industry;
+    }
+
+    /**
      * @param string $first_name
      */
     public function setFirstName(string $first_name)
@@ -116,26 +146,10 @@ class OmnisaleUser
     }
 
     /**
-     * @param $is_blankslate_done
+     * @param string $created_at
      */
-    public function setIsBlankslateDone($is_blankslate_done)
+    public function setCreatedAt(string $created_at)
     {
-        $this->is_blankslate_done = $is_blankslate_done;
-    }
-
-    /**
-     * @param string $pass_last_updated
-     */
-    public function setPassLastUpdated(string $pass_last_updated)
-    {
-        $this->pass_last_updated = $pass_last_updated;
-    }
-
-    /**
-     * @param $roles
-     */
-    public function setRoles($roles)
-    {
-        $this->roles = $roles;
+        $this->created_at = $created_at;
     }
 }
