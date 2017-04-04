@@ -20,18 +20,6 @@ class OmnisaleOrder
     public $customer_id;
 
     /**
-     * @var int
-     * @Serializer\Type("integer")
-     */
-    public $shop_channel_id;
-
-    /**
-     * @var int
-     * @Serializer\Type("integer")
-     */
-    public $channel_id;
-
-    /**
      * @var string
      * @Serializer\Type("string")
      */
@@ -230,28 +218,22 @@ class OmnisaleOrder
     public $customer;
 
     /**
-     * @var OmnisaleOrderCustomerChannel
-     * @Serializer\Type("OmnisaleOrderCustomerChannel")
+     * @var OmnisaleOrderBillingAddress
+     * @Serializer\Type("OmnisaleOrderBillingAddress")
      */
-    public $customer_channel;
+    public $billing_address;
 
     /**
-     * @var OmnisaleOrderBillingAddressChannel
-     * @Serializer\Type("OmnisaleOrderBillingAddressChannel")
+     * @var OmnisaleOrderShippingAddress
+     * @Serializer\Type("OmnisaleOrderShippingAddress")
      */
-    public $billing_address_channel;
+    public $shipping_address;
 
     /**
-     * @var OmnisaleOrderShippingAddressChannel
-     * @Serializer\Type("OmnisaleOrderShippingAddressChannel")
+     * @var OmnisaleOrderItem[]
+     * @Serializer\Type("array<OmnisaleOrderItem>")
      */
-    public $shipping_address_channel;
-
-    /**
-     * @var OmnisaleOrderChannelItem[]
-     * @Serializer\Type("array<OmnisaleOrderShippingAddressChannel>")
-     */
-    public $order_channel_items;
+    public $order_items;
 
     /**
      * @var string[]
@@ -305,22 +287,6 @@ class OmnisaleOrder
     public function setCustomerId($customer_id)
     {
         $this->customer_id = $customer_id;
-    }
-
-    /**
-     * @param int $shop_channel_id
-     */
-    public function setShopChannelId($shop_channel_id)
-    {
-        $this->shop_channel_id = $shop_channel_id;
-    }
-
-    /**
-     * @param int $channel_id
-     */
-    public function setChannelId($channel_id)
-    {
-        $this->channel_id = $channel_id;
     }
 
     /**
@@ -594,39 +560,31 @@ class OmnisaleOrder
     }
 
     /**
-     * @param $customer_channel
+     * @param $billing_address
      */
-    public function setCustomerChannel($customer_channel)
+    public function setBillingAddress($billing_address)
     {
-        $this->customer_channel = new OmnisaleOrderCustomerChannel((array)$customer_channel);
+        $this->billing_address = new OmnisaleOrderBillingAddress((array)$billing_address);
     }
 
     /**
-     * @param $billing_address_channel
+     * @param  $shipping_address
      */
-    public function setBillingAddressChannel($billing_address_channel)
+    public function setShippingAddress($shipping_address)
     {
-        $this->billing_address_channel = new OmnisaleOrderBillingAddressChannel((array)$billing_address_channel);
+        $this->shipping_address = new OmnisaleOrderShippingAddress((array)$shipping_address);
     }
 
     /**
-     * @param  $shipping_address_channel
+     * @param $order_items
      */
-    public function setShippingAddressChannel($shipping_address_channel)
+    public function setOrderItems(array $order_items)
     {
-        $this->shipping_address_channel = new OmnisaleOrderShippingAddressChannel((array)$shipping_address_channel);
-    }
+        if( is_array($order_items) && $order_items ) {
 
-    /**
-     * @param $order_channel_items
-     */
-    public function setOrderChannelItems(array $order_channel_items)
-    {
-        if( is_array($order_channel_items) && $order_channel_items ) {
+            foreach( $order_items as $k => $v ) {
 
-            foreach( $order_channel_items as $k => $v ) {
-
-                $this->order_channel_items[] = new OmnisaleOrderChannelItem((array)$v);
+                $this->order_items[] = new OmnisaleOrderItem((array)$v);
             }
         }
     }
@@ -660,4 +618,6 @@ class OmnisaleOrder
     {
         $this->fulfillments = $fulfillments;
     }
+
+
 }

@@ -5,7 +5,7 @@ namespace Omnisale\Model\Product;
 use Omnisale\Parser\StringHelper;
 use JMS\Serializer\Annotation as Serializer;
 
-class OmnisaleVariantChannelProperty
+class OmnisaleVariantProperty
 {
     /**
      * @var int

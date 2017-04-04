@@ -5,7 +5,7 @@ namespace Omnisale\Model\Order;
 use Omnisale\Parser\StringHelper;
 use JMS\Serializer\Annotation as Serializer;
 
-class OmnisaleOrderShippingAddressChannel
+class OmnisaleOrderBillingAddress
 {
     /**
      * @var int
@@ -264,4 +264,6 @@ class OmnisaleOrderShippingAddressChannel
     {
         $this->tax_id = $tax_id;
     }
+
+
 }

@@ -6,9 +6,9 @@ use Omnisale\Parser\StringHelper;
 use JMS\Serializer\Annotation as Serializer;
 use Omnisale\Model\Product\OmnisaleProductChannel;
 use Omnisale\Model\Product\OmnisaleVariantChannel;
-use Omnisale\Model\Product\OmnisaleVariantChannelProperty;
+use Omnisale\Model\Product\OmnisaleVariantProperty;
 
-class OmnisaleOrderChannelItem
+class OmnisaleOrderItem
 {
     /**
      * @var int
@@ -33,6 +33,12 @@ class OmnisaleOrderChannelItem
      * @Serializer\Type("integer")
      */
     public $quantity;
+
+    /**
+     * @var boolean
+     * @Serializer\Type("boolean")
+     */
+    public $requires_shipping;
 
     /**
      * @var int
@@ -65,8 +71,8 @@ class OmnisaleOrderChannelItem
     public $variant_title;
 
     /**
-     * @var OmnisaleVariantChannelProperty[]
-     * @Serializer\Type("array<OmnisaleVariantChannelProperty>")
+     * @var OmnisaleVariantProperty[]
+     * @Serializer\Type("array<OmnisaleVariantProperty>")
      */
     public $variant_properties;
 
@@ -75,6 +81,24 @@ class OmnisaleOrderChannelItem
      * @Serializer\Type("string")
      */
     public $vendor;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    public $external_order_item_id;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    public $external_product_id;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    public $external_variant_id;
 
     /**
      * @var string
@@ -89,22 +113,28 @@ class OmnisaleOrderChannelItem
     public $total_discount;
 
     /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    public $fulfillment_status;
+
+    /**
      * @var bool
      * @Serializer\Type("bool")
      */
     public $taxable;
 
     /**
-     * @var OmnisaleProductChannel
-     * @Serializer\Type("OmnisaleProductChannel")
+     * @var string
+     * @Serializer\Type("string")
      */
-    public $product_channel;
+    public $created_at;
 
     /**
-     * @var OmnisaleVariantChannel
-     * @Serializer\Type("OmnisaleVariantChannel")
+     * @var string
+     * @Serializer\Type("string")
      */
-    public $channel_variant;
+    public $updated_at;
 
     /**
      * @param array $data
@@ -207,7 +237,7 @@ class OmnisaleOrderChannelItem
 
             foreach( $variant_properties as $k => $v ) {
 
-                $this->variant_properties[] = new OmnisaleVariantChannelProperty((array)$v);
+                $this->variant_properties[] = new OmnisaleVariantProperty((array)$v);
             }
         }
     }
@@ -245,18 +275,58 @@ class OmnisaleOrderChannelItem
     }
 
     /**
-     * @param $product_channel
+     * @param boolean $requires_shipping
      */
-    public function setProductChannel($product_channel)
+    public function setRequiresShipping($requires_shipping)
     {
-        $this->product_channel = new OmnisaleProductChannel((array)$product_channel);
+        $this->requires_shipping = $requires_shipping;
     }
 
     /**
-     * @param $channel_variant
+     * @param string $external_order_item_id
      */
-    public function setChannelVariant($channel_variant)
+    public function setExternalOrderItemId($external_order_item_id)
     {
-        $this->channel_variant = new OmnisaleVariantChannel((array)$channel_variant);
+        $this->external_order_item_id = $external_order_item_id;
+    }
+
+    /**
+     * @param string $external_product_id
+     */
+    public function setExternalProductId($external_product_id)
+    {
+        $this->external_product_id = $external_product_id;
+    }
+
+    /**
+     * @param string $external_variant_id
+     */
+    public function setExternalVariantId($external_variant_id)
+    {
+        $this->external_variant_id = $external_variant_id;
+    }
+
+    /**
+     * @param string $fulfillment_status
+     */
+    public function setFulfillmentStatus($fulfillment_status)
+    {
+        $this->fulfillment_status = $fulfillment_status;
+    }
+
+    /**
+     * @param string $created_at
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->created_at = $created_at;
+    }
+
+    /**
+     * @param string $updated_at
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        $this->updated_at = $updated_at;
     }
 }
