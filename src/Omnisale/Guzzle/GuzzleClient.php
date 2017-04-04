@@ -268,6 +268,7 @@ class GuzzleClient
 
         if( $returnUrl ) return $authUrl;
         header("Location: {$authUrl}");
+        exit;
     }
 
 }
