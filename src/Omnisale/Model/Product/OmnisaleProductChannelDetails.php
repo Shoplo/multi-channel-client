@@ -54,7 +54,7 @@ class OmnisaleProductChannelDetails
     /**
      * @param string $title
      */
-    public function setTitle(string $title)
+    public function setTitle($title)
     {
         $this->title = $title;
     }
@@ -62,7 +62,7 @@ class OmnisaleProductChannelDetails
     /**
      * @param string $description
      */
-    public function setDescription(string $description)
+    public function setDescription($description)
     {
         $this->description = $description;
     }
@@ -70,7 +70,7 @@ class OmnisaleProductChannelDetails
     /**
      * @param string $url
      */
-    public function setUrl(string $url)
+    public function setUrl($url)
     {
         $this->url = $url;
     }
@@ -78,7 +78,7 @@ class OmnisaleProductChannelDetails
     /**
      * @param string $status
      */
-    public function setStatus(string $status)
+    public function setStatus($status)
     {
         $this->status = $status;
     }

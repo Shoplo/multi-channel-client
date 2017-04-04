@@ -129,7 +129,7 @@ class OmnisaleOrderChannelItem
     /**
      * @param int $id
      */
-    public function setId(int $id)
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -137,7 +137,7 @@ class OmnisaleOrderChannelItem
     /**
      * @param int $price
      */
-    public function setPrice(int $price)
+    public function setPrice($price)
     {
         $this->price = $price;
     }
@@ -145,7 +145,7 @@ class OmnisaleOrderChannelItem
     /**
      * @param string $properties
      */
-    public function setProperties(string $properties)
+    public function setProperties($properties)
     {
         $this->properties = $properties;
     }
@@ -153,7 +153,7 @@ class OmnisaleOrderChannelItem
     /**
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
     }
@@ -161,7 +161,7 @@ class OmnisaleOrderChannelItem
     /**
      * @param int $weight
      */
-    public function setWeight(int $weight)
+    public function setWeight($weight)
     {
         $this->weight = $weight;
     }
@@ -169,7 +169,7 @@ class OmnisaleOrderChannelItem
     /**
      * @param string $sku
      */
-    public function setSku(string $sku)
+    public function setSku($sku)
     {
         $this->sku = $sku;
     }
@@ -177,7 +177,7 @@ class OmnisaleOrderChannelItem
     /**
      * @param string $title
      */
-    public function setTitle(string $title)
+    public function setTitle($title)
     {
         $this->title = $title;
     }
@@ -185,7 +185,7 @@ class OmnisaleOrderChannelItem
     /**
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->name = $name;
     }
@@ -193,7 +193,7 @@ class OmnisaleOrderChannelItem
     /**
      * @param string $variant_title
      */
-    public function setVariantTitle(string $variant_title)
+    public function setVariantTitle($variant_title)
     {
         $this->variant_title = $variant_title;
     }
@@ -215,7 +215,7 @@ class OmnisaleOrderChannelItem
     /**
      * @param string $vendor
      */
-    public function setVendor(string $vendor)
+    public function setVendor($vendor)
     {
         $this->vendor = $vendor;
     }
@@ -223,7 +223,7 @@ class OmnisaleOrderChannelItem
     /**
      * @param string $tax_lines
      */
-    public function setTaxLines(string $tax_lines)
+    public function setTaxLines($tax_lines)
     {
         $this->tax_lines = $tax_lines;
     }
@@ -231,7 +231,7 @@ class OmnisaleOrderChannelItem
     /**
      * @param int $total_discount
      */
-    public function setTotalDiscount(int $total_discount)
+    public function setTotalDiscount($total_discount)
     {
         $this->total_discount = $total_discount;
     }
@@ -239,7 +239,7 @@ class OmnisaleOrderChannelItem
     /**
      * @param boolean $taxable
      */
-    public function setTaxable(bool $taxable)
+    public function setTaxable($taxable)
     {
         $this->taxable = $taxable;
     }

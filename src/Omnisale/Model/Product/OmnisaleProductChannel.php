@@ -127,7 +127,7 @@ class OmnisaleProductChannel
     /**
      * @param int $id
      */
-    public function setId(int $id)
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -135,7 +135,7 @@ class OmnisaleProductChannel
     /**
      * @param string $title
      */
-    public function setTitle(string $title)
+    public function setTitle($title)
     {
         $this->title = $title;
     }
@@ -143,7 +143,7 @@ class OmnisaleProductChannel
     /**
      * @param int $price
      */
-    public function setPrice(int $price)
+    public function setPrice($price)
     {
         $this->price = $price;
     }
@@ -151,7 +151,7 @@ class OmnisaleProductChannel
     /**
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
     }
@@ -173,7 +173,7 @@ class OmnisaleProductChannel
     /**
      * @param string $currency_code
      */
-    public function setCurrencyCode(string $currency_code)
+    public function setCurrencyCode($currency_code)
     {
         $this->currency_code = $currency_code;
     }
@@ -181,7 +181,7 @@ class OmnisaleProductChannel
     /**
      * @param string $language
      */
-    public function setLanguage(string $language)
+    public function setLanguage($language)
     {
         $this->language = $language;
     }
@@ -189,7 +189,7 @@ class OmnisaleProductChannel
     /**
      * @param string $main_image_url
      */
-    public function setMainImageUrl(string $main_image_url)
+    public function setMainImageUrl($main_image_url)
     {
         $this->main_image_url = $main_image_url;
     }
@@ -205,7 +205,7 @@ class OmnisaleProductChannel
     /**
      * @param int $external_product_id
      */
-    public function setExternalProductId(int $external_product_id)
+    public function setExternalProductId($external_product_id)
     {
         $this->external_product_id = $external_product_id;
     }
@@ -213,7 +213,7 @@ class OmnisaleProductChannel
     /**
      * @param int $shop_channel_id
      */
-    public function setShopChannelId(int $shop_channel_id)
+    public function setShopChannelId($shop_channel_id)
     {
         $this->shop_channel_id = $shop_channel_id;
     }
@@ -221,7 +221,7 @@ class OmnisaleProductChannel
     /**
      * @param int $channel_id
      */
-    public function setChannelId(int $channel_id)
+    public function setChannelId($channel_id)
     {
         $this->channel_id = $channel_id;
     }
@@ -229,7 +229,7 @@ class OmnisaleProductChannel
     /**
      * @param string $status
      */
-    public function setStatus(string $status)
+    public function setStatus($status)
     {
         $this->status = $status;
     }
@@ -259,7 +259,7 @@ class OmnisaleProductChannel
     /**
      * @param string $updated_at
      */
-    public function setUpdatedAt(string $updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
     }

@@ -55,7 +55,7 @@ class OmnisaleProductChannelParentProperty
     /**
      * @param int $id
      */
-    public function setId(int $id)
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -63,7 +63,7 @@ class OmnisaleProductChannelParentProperty
     /**
      * @param string $title
      */
-    public function setTitle(string $title)
+    public function setTitle($title)
     {
         $this->title = $title;
     }
@@ -71,7 +71,7 @@ class OmnisaleProductChannelParentProperty
     /**
      * @param int $position
      */
-    public function setPosition(int $position)
+    public function setPosition($position)
     {
         $this->position = $position;
     }
@@ -79,7 +79,7 @@ class OmnisaleProductChannelParentProperty
     /**
      * @param int $external_id
      */
-    public function setExternalId(int $external_id)
+    public function setExternalId($external_id)
     {
         $this->external_id = $external_id;
     }

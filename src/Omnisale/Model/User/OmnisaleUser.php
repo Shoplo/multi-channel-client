@@ -84,7 +84,7 @@ class OmnisaleUser
     /**
      * @param int $id
      */
-    public function setId(int $id)
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -92,7 +92,7 @@ class OmnisaleUser
     /**
      * @param string $email
      */
-    public function setEmail(string $email)
+    public function setEmail($email)
     {
         $this->email = $email;
     }
@@ -100,7 +100,7 @@ class OmnisaleUser
     /**
      * @param string $avatar_url
      */
-    public function setAvatarUrl(string $avatar_url)
+    public function setAvatarUrl($avatar_url)
     {
         $this->avatar_url = $avatar_url;
     }
@@ -108,7 +108,7 @@ class OmnisaleUser
     /**
      * @param string $source
      */
-    public function setSource(string $source)
+    public function setSource($source)
     {
         $this->source = $source;
     }
@@ -116,7 +116,7 @@ class OmnisaleUser
     /**
      * @param string $lang
      */
-    public function setLang(string $lang)
+    public function setLang($lang)
     {
         $this->lang = $lang;
     }
@@ -124,7 +124,7 @@ class OmnisaleUser
     /**
      * @param string $industry
      */
-    public function setIndustry(string $industry)
+    public function setIndustry($industry)
     {
         $this->industry = $industry;
     }
@@ -132,7 +132,7 @@ class OmnisaleUser
     /**
      * @param string $first_name
      */
-    public function setFirstName(string $first_name)
+    public function setFirstName($first_name)
     {
         $this->first_name = $first_name;
     }
@@ -140,7 +140,7 @@ class OmnisaleUser
     /**
      * @param string $last_name
      */
-    public function setLastName(string $last_name)
+    public function setLastName($last_name)
     {
         $this->last_name = $last_name;
     }
@@ -148,7 +148,7 @@ class OmnisaleUser
     /**
      * @param string $created_at
      */
-    public function setCreatedAt(string $created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
     }

@@ -90,7 +90,7 @@ class OmnisaleProductChannelDetailsData
     /**
      * @param string $short_description
      */
-    public function setShortDescription(string $short_description)
+    public function setShortDescription($short_description)
     {
         $this->short_description = $short_description;
     }
@@ -98,7 +98,7 @@ class OmnisaleProductChannelDetailsData
     /**
      * @param string $url
      */
-    public function setUrl(string $url)
+    public function setUrl($url)
     {
         $this->url = $url;
     }
@@ -106,7 +106,7 @@ class OmnisaleProductChannelDetailsData
     /**
      * @param string $width
      */
-    public function setWidth(string $width)
+    public function setWidth($width)
     {
         $this->width = $width;
     }
@@ -114,7 +114,7 @@ class OmnisaleProductChannelDetailsData
     /**
      * @param string $height
      */
-    public function setHeight(string $height)
+    public function setHeight($height)
     {
         $this->height = $height;
     }
@@ -122,7 +122,7 @@ class OmnisaleProductChannelDetailsData
     /**
      * @param string $depth
      */
-    public function setDepth(string $depth)
+    public function setDepth($depth)
     {
         $this->depth = $depth;
     }
@@ -130,7 +130,7 @@ class OmnisaleProductChannelDetailsData
     /**
      * @param string $diameter
      */
-    public function setDiameter(string $diameter)
+    public function setDiameter($diameter)
     {
         $this->diameter = $diameter;
     }
@@ -138,7 +138,7 @@ class OmnisaleProductChannelDetailsData
     /**
      * @param string $tax
      */
-    public function setTax(string $tax)
+    public function setTax($tax)
     {
         $this->tax = $tax;
     }
@@ -146,7 +146,7 @@ class OmnisaleProductChannelDetailsData
     /**
      * @param string $vendor
      */
-    public function setVendor(string $vendor)
+    public function setVendor($vendor)
     {
         $this->vendor = $vendor;
     }

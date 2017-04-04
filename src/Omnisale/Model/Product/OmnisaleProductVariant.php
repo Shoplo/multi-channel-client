@@ -110,7 +110,7 @@ class OmnisaleProductVariant
     /**
      * @param int $id
      */
-    public function setId(int $id)
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -118,7 +118,7 @@ class OmnisaleProductVariant
     /**
      * @param int $product_id
      */
-    public function setProductId(int $product_id)
+    public function setProductId($product_id)
     {
         $this->product_id = $product_id;
     }
@@ -126,7 +126,7 @@ class OmnisaleProductVariant
     /**
      * @param string $title
      */
-    public function setTitle(string $title)
+    public function setTitle($title)
     {
         $this->title = $title;
     }
@@ -134,7 +134,7 @@ class OmnisaleProductVariant
     /**
      * @param string $sku
      */
-    public function setSku(string $sku)
+    public function setSku($sku)
     {
         $this->sku = $sku;
     }
@@ -142,7 +142,7 @@ class OmnisaleProductVariant
     /**
      * @param int $price
      */
-    public function setPrice(int $price)
+    public function setPrice($price)
     {
         $this->price = $price;
     }
@@ -150,7 +150,7 @@ class OmnisaleProductVariant
     /**
      * @param int $compare_at_price
      */
-    public function setCompareAtPrice(int $compare_at_price)
+    public function setCompareAtPrice($compare_at_price)
     {
         $this->compare_at_price = $compare_at_price;
     }
@@ -158,7 +158,7 @@ class OmnisaleProductVariant
     /**
      * @param string $img_url
      */
-    public function setImgUrl(string $img_url)
+    public function setImgUrl($img_url)
     {
         $this->img_url = $img_url;
     }
@@ -166,7 +166,7 @@ class OmnisaleProductVariant
     /**
      * @param int $inventory_quantity
      */
-    public function setInventoryQuantity(int $inventory_quantity)
+    public function setInventoryQuantity($inventory_quantity)
     {
         $this->inventory_quantity = $inventory_quantity;
     }
@@ -174,7 +174,7 @@ class OmnisaleProductVariant
     /**
      * @param string $inventory_group
      */
-    public function setInventoryGroup(string $inventory_group)
+    public function setInventoryGroup($inventory_group)
     {
         $this->inventory_group = $inventory_group;
     }
@@ -182,7 +182,7 @@ class OmnisaleProductVariant
     /**
      * @param int $weight
      */
-    public function setWeight(int $weight)
+    public function setWeight($weight)
     {
         $this->weight = $weight;
     }
@@ -190,7 +190,7 @@ class OmnisaleProductVariant
     /**
      * @param string $availability_description
      */
-    public function setAvailabilityDescription(string $availability_description)
+    public function setAvailabilityDescription($availability_description)
     {
         $this->availability_description = $availability_description;
     }
@@ -198,7 +198,7 @@ class OmnisaleProductVariant
     /**
      * @param int $position
      */
-    public function setPosition(int $position)
+    public function setPosition($position)
     {
         $this->position = $position;
     }
@@ -206,7 +206,7 @@ class OmnisaleProductVariant
     /**
      * @param string $barcode
      */
-    public function setBarcode(string $barcode)
+    public function setBarcode($barcode)
     {
         $this->barcode = $barcode;
     }

@@ -48,7 +48,7 @@ class OmnisaleOrderDiscountCode
     /**
      * @param string $code
      */
-    public function setCode(string $code)
+    public function setCode($code)
     {
         $this->code = $code;
     }
@@ -56,7 +56,7 @@ class OmnisaleOrderDiscountCode
     /**
      * @param int $amount
      */
-    public function setAmount(int $amount)
+    public function setAmount($amount)
     {
         $this->amount = $amount;
     }
@@ -64,7 +64,7 @@ class OmnisaleOrderDiscountCode
     /**
      * @param string $type
      */
-    public function setType(string $type)
+    public function setType($type)
     {
         $this->type = $type;
     }

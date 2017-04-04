@@ -60,7 +60,7 @@ class OmnisaleProductChannelCategory
     /**
      * @param int $id
      */
-    public function setId(int $id)
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -68,7 +68,7 @@ class OmnisaleProductChannelCategory
     /**
      * @param int $external_id
      */
-    public function setExternalId(int $external_id)
+    public function setExternalId($external_id)
     {
         $this->external_id = $external_id;
     }
@@ -76,7 +76,7 @@ class OmnisaleProductChannelCategory
     /**
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->name = $name;
     }
@@ -84,7 +84,7 @@ class OmnisaleProductChannelCategory
     /**
      * @param string $path
      */
-    public function setPath(string $path)
+    public function setPath($path)
     {
         $this->path = $path;
     }
@@ -92,7 +92,7 @@ class OmnisaleProductChannelCategory
     /**
      * @param string $external_type
      */
-    public function setExternalType(string $external_type)
+    public function setExternalType($external_type)
     {
         $this->external_type = $external_type;
     }

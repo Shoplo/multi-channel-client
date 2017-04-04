@@ -126,7 +126,7 @@ class OmnisaleOrderCustomer
     /**
      * @param int $id
      */
-    public function setId(int $id)
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -134,7 +134,7 @@ class OmnisaleOrderCustomer
     /**
      * @param boolean $accepts_marketing
      */
-    public function setAcceptsMarketing(bool $accepts_marketing)
+    public function setAcceptsMarketing($accepts_marketing)
     {
         $this->accepts_marketing = $accepts_marketing;
     }
@@ -142,7 +142,7 @@ class OmnisaleOrderCustomer
     /**
      * @param string $email
      */
-    public function setEmail(string $email)
+    public function setEmail($email)
     {
         $this->email = $email;
     }
@@ -150,7 +150,7 @@ class OmnisaleOrderCustomer
     /**
      * @param string $first_name
      */
-    public function setFirstName(string $first_name)
+    public function setFirstName($first_name)
     {
         $this->first_name = $first_name;
     }
@@ -158,7 +158,7 @@ class OmnisaleOrderCustomer
     /**
      * @param string $last_name
      */
-    public function setLastName(string $last_name)
+    public function setLastName($last_name)
     {
         $this->last_name = $last_name;
     }
@@ -166,7 +166,7 @@ class OmnisaleOrderCustomer
     /**
      * @param string $note
      */
-    public function setNote(string $note)
+    public function setNote($note)
     {
         $this->note = $note;
     }
@@ -174,7 +174,7 @@ class OmnisaleOrderCustomer
     /**
      * @param int $orders_count
      */
-    public function setOrdersCount(int $orders_count)
+    public function setOrdersCount($orders_count)
     {
         $this->orders_count = $orders_count;
     }
@@ -182,7 +182,7 @@ class OmnisaleOrderCustomer
     /**
      * @param string $tax_exempt
      */
-    public function setTaxExempt(string $tax_exempt)
+    public function setTaxExempt($tax_exempt)
     {
         $this->tax_exempt = $tax_exempt;
     }
@@ -190,7 +190,7 @@ class OmnisaleOrderCustomer
     /**
      * @param int $total_spent
      */
-    public function setTotalSpent(int $total_spent)
+    public function setTotalSpent($total_spent)
     {
         $this->total_spent = $total_spent;
     }
@@ -198,7 +198,7 @@ class OmnisaleOrderCustomer
     /**
      * @param boolean $verified_email
      */
-    public function setVerifiedEmail(bool $verified_email)
+    public function setVerifiedEmail($verified_email)
     {
         $this->verified_email = $verified_email;
     }
@@ -206,7 +206,7 @@ class OmnisaleOrderCustomer
     /**
      * @param string $last_order_id
      */
-    public function setLastOrderId(string $last_order_id)
+    public function setLastOrderId($last_order_id)
     {
         $this->last_order_id = $last_order_id;
     }
@@ -214,7 +214,7 @@ class OmnisaleOrderCustomer
     /**
      * @param string $last_order_date
      */
-    public function setLastOrderDate(string $last_order_date)
+    public function setLastOrderDate($last_order_date)
     {
         $this->last_order_date = $last_order_date;
     }
@@ -222,7 +222,7 @@ class OmnisaleOrderCustomer
     /**
      * @param string $currency
      */
-    public function setCurrency(string $currency)
+    public function setCurrency($currency)
     {
         $this->currency = $currency;
     }
@@ -230,7 +230,7 @@ class OmnisaleOrderCustomer
     /**
      * @param string $avatar_url
      */
-    public function setAvatarUrl(string $avatar_url)
+    public function setAvatarUrl($avatar_url)
     {
         $this->avatar_url = $avatar_url;
     }
@@ -238,7 +238,7 @@ class OmnisaleOrderCustomer
     /**
      * @param string $created_at
      */
-    public function setCreatedAt(string $created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
     }
@@ -246,7 +246,7 @@ class OmnisaleOrderCustomer
     /**
      * @param string $updated_at
      */
-    public function setUpdatedAt(string $updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
     }

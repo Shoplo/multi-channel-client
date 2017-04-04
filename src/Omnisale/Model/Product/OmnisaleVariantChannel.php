@@ -85,7 +85,7 @@ class OmnisaleVariantChannel
     /**
      * @param int $id
      */
-    public function setId(int $id)
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -93,7 +93,7 @@ class OmnisaleVariantChannel
     /**
      * @param int $external_id
      */
-    public function setExternalId(int $external_id)
+    public function setExternalId($external_id)
     {
         $this->external_id = $external_id;
     }
@@ -101,7 +101,7 @@ class OmnisaleVariantChannel
     /**
      * @param string $sku
      */
-    public function setSku(string $sku)
+    public function setSku($sku)
     {
         $this->sku = $sku;
     }
@@ -109,7 +109,7 @@ class OmnisaleVariantChannel
     /**
      * @param int $price
      */
-    public function setPrice(int $price)
+    public function setPrice($price)
     {
         $this->price = $price;
     }
@@ -117,7 +117,7 @@ class OmnisaleVariantChannel
     /**
      * @param boolean $is_syncing
      */
-    public function setIsSyncing(bool $is_syncing)
+    public function setIsSyncing($is_syncing)
     {
         $this->is_syncing = $is_syncing;
     }
@@ -125,7 +125,7 @@ class OmnisaleVariantChannel
     /**
      * @param int $compare_at_price
      */
-    public function setCompareAtPrice(int $compare_at_price)
+    public function setCompareAtPrice($compare_at_price)
     {
         $this->compare_at_price = $compare_at_price;
     }
@@ -133,7 +133,7 @@ class OmnisaleVariantChannel
     /**
      * @param int $inventory_quantity
      */
-    public function setInventoryQuantity(int $inventory_quantity)
+    public function setInventoryQuantity($inventory_quantity)
     {
         $this->inventory_quantity = $inventory_quantity;
     }
@@ -141,7 +141,7 @@ class OmnisaleVariantChannel
     /**
      * @param string $barcode
      */
-    public function setBarcode(string $barcode)
+    public function setBarcode($barcode)
     {
         $this->barcode = $barcode;
     }

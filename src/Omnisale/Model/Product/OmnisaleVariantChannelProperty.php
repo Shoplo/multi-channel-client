@@ -54,7 +54,7 @@ class OmnisaleVariantChannelProperty
     /**
      * @param int $parent_property_id
      */
-    public function setParentPropertyId(int $parent_property_id)
+    public function setParentPropertyId($parent_property_id)
     {
         $this->parent_property_id = $parent_property_id;
     }
@@ -62,7 +62,7 @@ class OmnisaleVariantChannelProperty
     /**
      * @param int $external_id
      */
-    public function setExternalId(int $external_id)
+    public function setExternalId($external_id)
     {
         $this->external_id = $external_id;
     }
@@ -70,7 +70,7 @@ class OmnisaleVariantChannelProperty
     /**
      * @param string $title
      */
-    public function setTitle(string $title)
+    public function setTitle($title)
     {
         $this->title = $title;
     }
@@ -78,7 +78,7 @@ class OmnisaleVariantChannelProperty
     /**
      * @param string $value
      */
-    public function setValue(string $value)
+    public function setValue($value)
     {
         $this->value = $value;
     }

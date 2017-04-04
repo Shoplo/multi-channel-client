@@ -91,7 +91,7 @@ class OmnisaleProductDetails
     /**
      * @param string $title
      */
-    public function setTitle(string $title)
+    public function setTitle($title)
     {
         $this->title = $title;
     }
@@ -99,7 +99,7 @@ class OmnisaleProductDetails
     /**
      * @param string $short_description
      */
-    public function setShortDescription(string $short_description)
+    public function setShortDescription($short_description)
     {
         $this->short_description = $short_description;
     }
@@ -107,7 +107,7 @@ class OmnisaleProductDetails
     /**
      * @param string $description
      */
-    public function setDescription(string $description)
+    public function setDescription($description)
     {
         $this->description = $description;
     }
@@ -115,7 +115,7 @@ class OmnisaleProductDetails
     /**
      * @param int $width
      */
-    public function setWidth(int $width)
+    public function setWidth($width)
     {
         $this->width = $width;
     }
@@ -123,7 +123,7 @@ class OmnisaleProductDetails
     /**
      * @param int $height
      */
-    public function setHeight(int $height)
+    public function setHeight($height)
     {
         $this->height = $height;
     }
@@ -131,7 +131,7 @@ class OmnisaleProductDetails
     /**
      * @param int $depth
      */
-    public function setDepth(int $depth)
+    public function setDepth($depth)
     {
         $this->depth = $depth;
     }
@@ -139,7 +139,7 @@ class OmnisaleProductDetails
     /**
      * @param string $diameter
      */
-    public function setDiameter(string $diameter)
+    public function setDiameter($diameter)
     {
         $this->diameter = $diameter;
     }
@@ -147,7 +147,7 @@ class OmnisaleProductDetails
     /**
      * @param string $measure_unit
      */
-    public function setMeasureUnit(string $measure_unit)
+    public function setMeasureUnit($measure_unit)
     {
         $this->measure_unit = $measure_unit;
     }

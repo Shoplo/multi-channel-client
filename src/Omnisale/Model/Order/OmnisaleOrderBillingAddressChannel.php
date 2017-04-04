@@ -132,7 +132,7 @@ class OmnisaleOrderBillingAddressChannel
     /**
      * @param int $id
      */
-    public function setId(int $id)
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -140,7 +140,7 @@ class OmnisaleOrderBillingAddressChannel
     /**
      * @param string $address1
      */
-    public function setAddress1(string $address1)
+    public function setAddress1($address1)
     {
         $this->address1 = $address1;
     }
@@ -148,7 +148,7 @@ class OmnisaleOrderBillingAddressChannel
     /**
      * @param string $address2
      */
-    public function setAddress2(string $address2)
+    public function setAddress2($address2)
     {
         $this->address2 = $address2;
     }
@@ -156,7 +156,7 @@ class OmnisaleOrderBillingAddressChannel
     /**
      * @param string $city
      */
-    public function setCity(string $city)
+    public function setCity($city)
     {
         $this->city = $city;
     }
@@ -164,7 +164,7 @@ class OmnisaleOrderBillingAddressChannel
     /**
      * @param string $company
      */
-    public function setCompany(string $company)
+    public function setCompany($company)
     {
         $this->company = $company;
     }
@@ -172,7 +172,7 @@ class OmnisaleOrderBillingAddressChannel
     /**
      * @param string $country
      */
-    public function setCountry(string $country)
+    public function setCountry($country)
     {
         $this->country = $country;
     }
@@ -180,7 +180,7 @@ class OmnisaleOrderBillingAddressChannel
     /**
      * @param string $country_code
      */
-    public function setCountryCode(string $country_code)
+    public function setCountryCode($country_code)
     {
         $this->country_code = $country_code;
     }
@@ -188,7 +188,7 @@ class OmnisaleOrderBillingAddressChannel
     /**
      * @param boolean $default
      */
-    public function setDefault(bool $default)
+    public function setDefault($default)
     {
         $this->default = $default;
     }
@@ -196,7 +196,7 @@ class OmnisaleOrderBillingAddressChannel
     /**
      * @param string $first_name
      */
-    public function setFirstName(string $first_name)
+    public function setFirstName($first_name)
     {
         $this->first_name = $first_name;
     }
@@ -204,7 +204,7 @@ class OmnisaleOrderBillingAddressChannel
     /**
      * @param string $last_name
      */
-    public function setLastName(string $last_name)
+    public function setLastName($last_name)
     {
         $this->last_name = $last_name;
     }
@@ -212,7 +212,7 @@ class OmnisaleOrderBillingAddressChannel
     /**
      * @param string $latitude
      */
-    public function setLatitude(string $latitude)
+    public function setLatitude($latitude)
     {
         $this->latitude = $latitude;
     }
@@ -220,7 +220,7 @@ class OmnisaleOrderBillingAddressChannel
     /**
      * @param string $longitude
      */
-    public function setLongitude(string $longitude)
+    public function setLongitude($longitude)
     {
         $this->longitude = $longitude;
     }
@@ -228,7 +228,7 @@ class OmnisaleOrderBillingAddressChannel
     /**
      * @param string $phone
      */
-    public function setPhone(string $phone)
+    public function setPhone($phone)
     {
         $this->phone = $phone;
     }
@@ -236,7 +236,7 @@ class OmnisaleOrderBillingAddressChannel
     /**
      * @param string $province
      */
-    public function setProvince(string $province)
+    public function setProvince($province)
     {
         $this->province = $province;
     }
@@ -244,7 +244,7 @@ class OmnisaleOrderBillingAddressChannel
     /**
      * @param string $province_code
      */
-    public function setProvinceCode(string $province_code)
+    public function setProvinceCode($province_code)
     {
         $this->province_code = $province_code;
     }
@@ -252,7 +252,7 @@ class OmnisaleOrderBillingAddressChannel
     /**
      * @param string $zip
      */
-    public function setZip(string $zip)
+    public function setZip($zip)
     {
         $this->zip = $zip;
     }
@@ -260,7 +260,7 @@ class OmnisaleOrderBillingAddressChannel
     /**
      * @param string $tax_id
      */
-    public function setTaxId(string $tax_id)
+    public function setTaxId($tax_id)
     {
         $this->tax_id = $tax_id;
     }

@@ -48,7 +48,7 @@ class OmnisaleOrderShippingLine
     /**
      * @param int $id
      */
-    public function setId(int $id)
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -56,7 +56,7 @@ class OmnisaleOrderShippingLine
     /**
      * @param int $price
      */
-    public function setPrice(int $price)
+    public function setPrice($price)
     {
         $this->price = $price;
     }
@@ -64,7 +64,7 @@ class OmnisaleOrderShippingLine
     /**
      * @param string $title
      */
-    public function setTitle(string $title)
+    public function setTitle($title)
     {
         $this->title = $title;
     }

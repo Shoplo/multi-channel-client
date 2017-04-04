@@ -91,7 +91,7 @@ class OmnisaleProduct
     /**
      * @param int $id
      */
-    public function setId(int $id)
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -99,7 +99,7 @@ class OmnisaleProduct
     /**
      * @param string $title
      */
-    public function setTitle(string $title)
+    public function setTitle($title)
     {
         $this->title = $title;
     }
@@ -107,7 +107,7 @@ class OmnisaleProduct
     /**
      * @param string $img_url
      */
-    public function setImgUrl(string $img_url)
+    public function setImgUrl($img_url)
     {
         $this->img_url = $img_url;
     }
@@ -115,7 +115,7 @@ class OmnisaleProduct
     /**
      * @param boolean $visibility
      */
-    public function setVisibility(bool $visibility)
+    public function setVisibility($visibility)
     {
         $this->visibility = $visibility;
     }
@@ -123,7 +123,7 @@ class OmnisaleProduct
     /**
      * @param string $currency_code
      */
-    public function setCurrencyCode(string $currency_code)
+    public function setCurrencyCode($currency_code)
     {
         $this->currency_code = $currency_code;
     }
@@ -131,7 +131,7 @@ class OmnisaleProduct
     /**
      * @param int $channels_count
      */
-    public function setChannelsCount(int $channels_count)
+    public function setChannelsCount($channels_count)
     {
         $this->channels_count = $channels_count;
     }
@@ -139,7 +139,7 @@ class OmnisaleProduct
     /**
      * @param string $created_at
      */
-    public function setCreatedAt(string $created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
     }

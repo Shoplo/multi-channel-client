@@ -78,7 +78,7 @@ class OmnisaleProductChannelImage
     /**
      * @param int $id
      */
-    public function setId(int $id)
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -86,7 +86,7 @@ class OmnisaleProductChannelImage
     /**
      * @param int $external_id
      */
-    public function setExternalId(int $external_id)
+    public function setExternalId($external_id)
     {
         $this->external_id = $external_id;
     }
@@ -94,7 +94,7 @@ class OmnisaleProductChannelImage
     /**
      * @param int $product_image_id
      */
-    public function setProductImageId(int $product_image_id)
+    public function setProductImageId($product_image_id)
     {
         $this->product_image_id = $product_image_id;
     }
@@ -102,7 +102,7 @@ class OmnisaleProductChannelImage
     /**
      * @param string $title
      */
-    public function setTitle(string $title)
+    public function setTitle($title)
     {
         $this->title = $title;
     }
@@ -110,7 +110,7 @@ class OmnisaleProductChannelImage
     /**
      * @param string $src
      */
-    public function setSrc(string $src)
+    public function setSrc($src)
     {
         $this->src = $src;
     }
@@ -118,7 +118,7 @@ class OmnisaleProductChannelImage
     /**
      * @param string $original_src
      */
-    public function setOriginalSrc(string $original_src)
+    public function setOriginalSrc($original_src)
     {
         $this->original_src = $original_src;
     }
@@ -126,7 +126,7 @@ class OmnisaleProductChannelImage
     /**
      * @param string $raw_src
      */
-    public function setRawSrc(string $raw_src)
+    public function setRawSrc($raw_src)
     {
         $this->raw_src = $raw_src;
     }
@@ -134,7 +134,7 @@ class OmnisaleProductChannelImage
     /**
      * @param string $position
      */
-    public function setPosition(string $position)
+    public function setPosition($position)
     {
         $this->position = $position;
     }

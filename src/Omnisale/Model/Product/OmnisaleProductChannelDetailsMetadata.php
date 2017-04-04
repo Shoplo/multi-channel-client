@@ -48,7 +48,7 @@ class OmnisaleProductChannelDetailsMetadata
     /**
      * @param string $meta_title
      */
-    public function setMetaTitle(string $meta_title)
+    public function setMetaTitle($meta_title)
     {
         $this->meta_title = $meta_title;
     }
@@ -56,7 +56,7 @@ class OmnisaleProductChannelDetailsMetadata
     /**
      * @param string $meta_description
      */
-    public function setMetaDescription(string $meta_description)
+    public function setMetaDescription($meta_description)
     {
         $this->meta_description = $meta_description;
     }
@@ -64,7 +64,7 @@ class OmnisaleProductChannelDetailsMetadata
     /**
      * @param string $meta_keywords
      */
-    public function setMetaKeywords(string $meta_keywords)
+    public function setMetaKeywords($meta_keywords)
     {
         $this->meta_keywords = $meta_keywords;
     }

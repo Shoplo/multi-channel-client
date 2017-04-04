@@ -120,7 +120,7 @@ class OmnisaleOrderCustomerChannel
     /**
      * @param int $id
      */
-    public function setId(int $id)
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -136,7 +136,7 @@ class OmnisaleOrderCustomerChannel
     /**
      * @param int $external_customer_id
      */
-    public function setExternalCustomerId(int $external_customer_id)
+    public function setExternalCustomerId($external_customer_id)
     {
         $this->external_customer_id = $external_customer_id;
     }
@@ -144,7 +144,7 @@ class OmnisaleOrderCustomerChannel
     /**
      * @param string $total_spent
      */
-    public function setTotalSpent(string $total_spent)
+    public function setTotalSpent($total_spent)
     {
         $this->total_spent = $total_spent;
     }
@@ -152,7 +152,7 @@ class OmnisaleOrderCustomerChannel
     /**
      * @param int $orders_count
      */
-    public function setOrdersCount(int $orders_count)
+    public function setOrdersCount($orders_count)
     {
         $this->orders_count = $orders_count;
     }
@@ -160,7 +160,7 @@ class OmnisaleOrderCustomerChannel
     /**
      * @param string $note
      */
-    public function setNote(string $note)
+    public function setNote($note)
     {
         $this->note = $note;
     }
@@ -168,7 +168,7 @@ class OmnisaleOrderCustomerChannel
     /**
      * @param string $state
      */
-    public function setState(string $state)
+    public function setState($state)
     {
         $this->state = $state;
     }
@@ -176,7 +176,7 @@ class OmnisaleOrderCustomerChannel
     /**
      * @param string $email
      */
-    public function setEmail(string $email)
+    public function setEmail($email)
     {
         $this->email = $email;
     }
@@ -184,7 +184,7 @@ class OmnisaleOrderCustomerChannel
     /**
      * @param string $first_name
      */
-    public function setFirstName(string $first_name)
+    public function setFirstName($first_name)
     {
         $this->first_name = $first_name;
     }
@@ -192,7 +192,7 @@ class OmnisaleOrderCustomerChannel
     /**
      * @param string $last_name
      */
-    public function setLastName(string $last_name)
+    public function setLastName($last_name)
     {
         $this->last_name = $last_name;
     }
@@ -200,7 +200,7 @@ class OmnisaleOrderCustomerChannel
     /**
      * @param string $external_last_order_id
      */
-    public function setExternalLastOrderId(string $external_last_order_id)
+    public function setExternalLastOrderId($external_last_order_id)
     {
         $this->external_last_order_id = $external_last_order_id;
     }
@@ -208,7 +208,7 @@ class OmnisaleOrderCustomerChannel
     /**
      * @param string $external_last_order_date
      */
-    public function setExternalLastOrderDate(string $external_last_order_date)
+    public function setExternalLastOrderDate($external_last_order_date)
     {
         $this->external_last_order_date = $external_last_order_date;
     }
@@ -216,7 +216,7 @@ class OmnisaleOrderCustomerChannel
     /**
      * @param string $tax_exempt
      */
-    public function setTaxExempt(string $tax_exempt)
+    public function setTaxExempt($tax_exempt)
     {
         $this->tax_exempt = $tax_exempt;
     }
@@ -232,7 +232,7 @@ class OmnisaleOrderCustomerChannel
     /**
      * @param string $updated_at
      */
-    public function setUpdatedAt(string $updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
     }
