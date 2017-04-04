@@ -44,4 +44,16 @@ class OmnisaleOrderResource
 
         return $results;
     }
+
+    /**
+     * @param array $parameters
+     * @return int
+     */
+    public function getCount($parameters = [])
+    {
+        $ordersUrl = $this->omnisaleClient->getOrdersUrl(0, $parameters);
+        $response = $this->omnisaleClient->apiClient->get($ordersUrl, $parameters);
+
+        return isset($response['total']) ? $response['total'] : 0;
+    }
 }
