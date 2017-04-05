@@ -248,8 +248,8 @@ class OmnisaleOrder
     public $shipping_lines;
 
     /**
-     * @var string[]
-     * @Serializer\Type("array<string>")
+     * @var OmnisaleOrderFulfillments[]
+     * @Serializer\Type("array<OmnisaleOrderFulfillments>")
      */
     public $fulfillments;
 
@@ -612,12 +612,16 @@ class OmnisaleOrder
     }
 
     /**
-     * @param \string[] $fulfillments
+     * @param OmnisaleOrderFulfillments[] $fulfillments
      */
     public function setFulfillments(array $fulfillments)
     {
-        $this->fulfillments = $fulfillments;
+        if( is_array($fulfillments) && $fulfillments ) {
+
+            foreach( $fulfillments as $k => $v ) {
+
+                $this->fulfillments[] = new OmnisaleOrderFulfillments($v);
+            }
+        }
     }
-
-
 }
