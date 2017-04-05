@@ -29,12 +29,14 @@ class OmnisaleOrderResource
     /**
      * @param int $id
      * @param array $parameters
-     * @return array
+     * @return OmnisaleOrder[]|OmnisaleOrder
      */
     public function getOrders($id = 0, $parameters = [])
     {
         $ordersUrl = $this->omnisaleClient->getOrdersUrl($id, $parameters);
         $response = $this->omnisaleClient->apiClient->get($ordersUrl, $parameters);
+
+        if($id) return new OmnisaleOrder($response);
 
         $results = [];
         foreach( $response['items'] as $k => $v ){
