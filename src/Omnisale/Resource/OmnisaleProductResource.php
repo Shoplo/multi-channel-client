@@ -2,6 +2,7 @@
 
 namespace Omnisale\Resource;
 
+use Omnisale\Model\Collection\OmnisaleProductsCollection;
 use Omnisale\Model\Product\OmnisaleProduct;
 use Omnisale\OmnisaleClient;
 
@@ -19,17 +20,19 @@ class OmnisaleProductResource
         $this->omnisaleClient = $omnisaleClient;
     }
 
-    public function getProducts($id = 0, $parameters = [])
+    public function getProduct($id)
     {
-        $productsUrl = $this->omnisaleClient->getProductsUrl($id, $parameters);
+        $productsUrl = $this->omnisaleClient->getProductsUrl($id);
+        $response = $this->omnisaleClient->apiClient->get($productsUrl);
+
+        return $this->omnisaleClient->serializer->deserialize($response, OmnisaleProduct::class, 'json');
+    }
+
+    public function getProducts($parameters = [])
+    {
+        $productsUrl = $this->omnisaleClient->getProductsUrl(0, $parameters);
         $response = $this->omnisaleClient->apiClient->get($productsUrl, $parameters);
 
-        $results = [];
-        foreach( $response['items'] as $k => $v ){
-            $results[$k] = new OmnisaleProduct($v);
-            print_r($results[$k]);exit;
-        }
-
-        return $results;
+        return $this->omnisaleClient->serializer->deserialize($response, OmnisaleProductsCollection::class, 'json');
     }
 }

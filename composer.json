@@ -8,8 +8,7 @@
   },
   "require": {
     "guzzlehttp/oauth-subscriber": "^0.3.0",
-    "jms/serializer-bundle": "dev-master",
-    "davedevelopment/stiphle": "^0.9.0",
-    "symfony/serializer": "^3.2"
+    "jms/serializer": "dev-master",
+    "symfony/property-access": "^3.2"
   }
 }

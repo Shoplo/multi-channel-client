@@ -2,6 +2,9 @@
 
 namespace Omnisale\Guzzle;
 
+use JMS\Serializer\Serializer;
+use JMS\Serializer\SerializerBuilder;
+
 class GuzzleClient
 {
     private $accessToken;
@@ -43,7 +46,7 @@ class GuzzleClient
 
     public function __construct($config)
     {
-        $this->serializer = new \Symfony\Component\Serializer\Serializer();
+        $this->serializer = SerializerBuilder::create()->build();
         $this->guzzle = new \GuzzleHttp\Client([
             'base_uri' => $config['apiBaseUrl'],
             'headers'  => $this->getHeaders(),
@@ -80,9 +83,7 @@ class GuzzleClient
             ]
         );
 
-        $json = \GuzzleHttp\json_decode($rsp->getBody(), true);
-
-        return $json;
+        return $rsp->getBody()->getContents();
     }
 
     public function put($url, $data = [], $headers = [])
@@ -114,9 +115,7 @@ class GuzzleClient
                 throw $e;
             }
 
-            $json = \GuzzleHttp\json_decode($rsp->getBody(), true);
-
-            return $json;
+            return $rsp->getBody();
         }
         catch (\Exception $e)
         {
@@ -141,9 +140,7 @@ class GuzzleClient
                 ]
             );
 
-            $json = \GuzzleHttp\json_decode($rsp->getBody(), true);
-
-            return $json;
+            return $rsp->getBody();
         }
         catch (\Exception $e)
         {
@@ -174,9 +171,7 @@ class GuzzleClient
                 ]
             );
 
-            $json = \GuzzleHttp\json_decode($rsp->getBody(), true);
-
-            return $json;
+            return $rsp->getBody();
         }
         catch (\Exception $e)
         {

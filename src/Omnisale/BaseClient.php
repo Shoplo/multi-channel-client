@@ -3,7 +3,13 @@
 namespace Omnisale;
 
 
+use JMS\Serializer\SerializerBuilder;
 use Omnisale\Guzzle\GuzzleClient;
+use Omnisale\Parser\JsonClassHintingNormalizer;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Encoder\XmlEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class BaseClient
 {
@@ -16,6 +22,9 @@ class BaseClient
     /** @var  GuzzleClient */
     public $apiClient;
 
+    /** @var  \JMS\Serializer\Serializer */
+    public $serializer;
+
     /**
      * BaseRemoteAPI constructor.
      * @param GuzzleClient $apiClient
@@ -23,6 +32,8 @@ class BaseClient
     public function __construct(GuzzleClient $apiClient)
     {
         $this->apiClient = $apiClient;
+
+        $this->serializer = SerializerBuilder::create()->build();
     }
 
     public function setLogger($logger)
@@ -44,6 +55,12 @@ class BaseClient
     {
         $filterParams = empty($parameters) ? '' : '?' . http_build_query($parameters);
         return $id ? self::SERVER_URI . '/v1/public/orders/' . $id . $filterParams : self::SERVER_URI . '/v1/public/orders' . $filterParams;
+    }
+
+    public function getOrdersFulfillmentsUrl($id, $parameters = [])
+    {
+        $filterParams = empty($parameters) ? '' : '?' . http_build_query($parameters);
+        return self::SERVER_URI . '/v1/public/orders/' . $id . '/fulfillments' . $filterParams;
     }
 
     public function getCustomersUrl($id = 0, $parameters = [])

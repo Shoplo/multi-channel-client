@@ -24,48 +24,4 @@ class OmnisaleProductChannelDetailsMetadata
      * @Serializer\Type("string")
      */
     public $meta_keywords;
-
-    /**
-     * @param array $data
-     */
-    public function __construct( Array $data = [] )
-    {
-        if( count($data) )
-        {
-            foreach( $data as $key => $value )
-            {
-                $field = StringHelper::convertStringToCamelCase( $key );
-
-                $setterMethod = 'set' . $field;
-                if( method_exists( $this, $setterMethod ) ){
-                    $value = is_null($value) ? '': $value;
-                    $this->$setterMethod( $value );
-                }
-            }
-        }
-    }
-
-    /**
-     * @param string $meta_title
-     */
-    public function setMetaTitle($meta_title)
-    {
-        $this->meta_title = $meta_title;
-    }
-
-    /**
-     * @param string $meta_description
-     */
-    public function setMetaDescription($meta_description)
-    {
-        $this->meta_description = $meta_description;
-    }
-
-    /**
-     * @param string $meta_keywords
-     */
-    public function setMetaKeywords($meta_keywords)
-    {
-        $this->meta_keywords = $meta_keywords;
-    }
 }

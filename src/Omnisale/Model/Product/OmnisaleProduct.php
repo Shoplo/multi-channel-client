@@ -58,119 +58,13 @@ class OmnisaleProduct
 
     /**
      * @var OmnisaleProductDetails
-     * @Serializer\Type("OmnisaleProductDetails")
+     * @Serializer\Type("Omnisale\Model\Product\OmnisaleProductDetails")
      */
     public $details;
 
     /**
      * @var OmnisaleProductVariant[]
-     * @Serializer\Type("array<OmnisaleProductVariant>")
+     * @Serializer\Type("array<Omnisale\Model\Product\OmnisaleProductVariant>")
      */
     public $variants;
-
-    /**
-     * @param array $data
-     */
-    public function __construct( Array $data = [] )
-    {
-        if( count($data) )
-        {
-            foreach( $data as $key => $value )
-            {
-                $field = StringHelper::convertStringToCamelCase( $key );
-
-                $setterMethod = 'set' . $field;
-                if( method_exists( $this, $setterMethod ) ){
-                    $value = is_null($value) ? '': $value;
-                    $this->$setterMethod( $value );
-                }
-            }
-        }
-    }
-
-    /**
-     * @param int $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @param string $title
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * @param string $img_url
-     */
-    public function setImgUrl($img_url)
-    {
-        $this->img_url = $img_url;
-    }
-
-    /**
-     * @param boolean $visibility
-     */
-    public function setVisibility($visibility)
-    {
-        $this->visibility = $visibility;
-    }
-
-    /**
-     * @param string $currency_code
-     */
-    public function setCurrencyCode($currency_code)
-    {
-        $this->currency_code = $currency_code;
-    }
-
-    /**
-     * @param int $channels_count
-     */
-    public function setChannelsCount($channels_count)
-    {
-        $this->channels_count = $channels_count;
-    }
-
-    /**
-     * @param string $created_at
-     */
-    public function setCreatedAt($created_at)
-    {
-        $this->created_at = $created_at;
-    }
-
-    /**
-     * @param string $updated_at
-     */
-    public function setUpdatedAt($updated_at)
-    {
-        $this->updated_at = $updated_at;
-    }
-
-    /**
-     * @param $details
-     */
-    public function setDetails($details)
-    {
-        $this->details = new OmnisaleProductDetails($details);
-    }
-
-    /**
-     * @param $variants
-     */
-    public function setVariants($variants)
-    {
-        if( is_array($variants) && $variants ) {
-
-            foreach( $variants as $k => $v ) {
-
-                $this->variants[] = new OmnisaleProductVariant((array)$v);
-            }
-        }
-    }
 }

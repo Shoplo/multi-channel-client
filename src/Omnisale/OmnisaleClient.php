@@ -29,6 +29,9 @@ class OmnisaleClient extends BaseClient
         $userUrl = $this->getUserUrl();
         $response = $this->apiClient->get($userUrl);
 
-        return new OmnisaleUser($response);
+        return $this->serializer->deserialize($response, OmnisaleUser::class, 'json');
+
+
+//        return new OmnisaleUser(\GuzzleHttp\json_decode($response, true));
     }
 }

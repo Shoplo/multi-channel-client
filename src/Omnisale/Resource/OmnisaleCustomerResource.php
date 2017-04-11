@@ -3,6 +3,7 @@
 namespace Omnisale\Resource;
 
 
+use Omnisale\Model\Collection\OmnisaleCustomersCollection;
 use Omnisale\Model\Customer\OmnisaleCustomer;
 use Omnisale\OmnisaleClient;
 
@@ -20,17 +21,19 @@ class OmnisaleCustomerResource
         $this->omnisaleClient = $omnisaleClient;
     }
 
-    public function getCustomers($id = 0, $parameters = [])
+    public function getCustomer($id)
     {
-        $customersUrl = $this->omnisaleClient->getCustomersUrl($id, $parameters);
+        $customersUrl = $this->omnisaleClient->getCustomersUrl($id);
+        $response = $this->omnisaleClient->apiClient->get($customersUrl);
+
+        return $this->omnisaleClient->serializer->deserialize($response, OmnisaleCustomer::class, 'json');
+    }
+
+    public function getCustomers($parameters = [])
+    {
+        $customersUrl = $this->omnisaleClient->getCustomersUrl(0, $parameters);
         $response = $this->omnisaleClient->apiClient->get($customersUrl, $parameters);
 
-        $results = [];
-        foreach( $response['items'] as $k => $v ){
-
-            $results[$k] = new OmnisaleCustomer($v);
-        }
-
-        return $results;
+        return $this->omnisaleClient->serializer->deserialize($response, OmnisaleCustomersCollection::class, 'json');
     }
 }
