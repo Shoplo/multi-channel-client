@@ -35,7 +35,7 @@ class OmnisaleOrderFulfillments
      * @var string[]
      * @Serializer\Type("array<string>")
      */
-    public $tracking_data;
+    public $tracking_data = "";
 
     /**
      * @var string
