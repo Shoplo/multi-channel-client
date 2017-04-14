@@ -49,6 +49,13 @@ class OmnisaleOrderResource
         return $this->omnisaleClient->apiClient->post($ordersUrl, $data);
     }
 
+    public function deleteOrderFullfilments($id, $fulfillmentId)
+    {
+        $ordersUrl = $this->omnisaleClient->getOrdersFulfillmentsUrl($id, $fulfillmentId);
+
+        return $this->omnisaleClient->apiClient->delete($ordersUrl);
+    }
+
     /**
      * @param array $parameters
      * @return OmnisaleOrdersCollection

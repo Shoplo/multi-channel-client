@@ -57,10 +57,13 @@ class BaseClient
         return $id ? self::SERVER_URI . '/v1/public/orders/' . $id . $filterParams : self::SERVER_URI . '/v1/public/orders' . $filterParams;
     }
 
-    public function getOrdersFulfillmentsUrl($id, $parameters = [])
+    public function getOrdersFulfillmentsUrl($id, $fulfillmentId = 0, $parameters = [])
     {
         $filterParams = empty($parameters) ? '' : '?' . http_build_query($parameters);
-        return self::SERVER_URI . '/v1/public/orders/' . $id . '/fulfillments' . $filterParams;
+        $url = self::SERVER_URI . '/v1/public/orders/' . $id . '/fulfillments';
+        if( $fulfillmentId ) $url .= '/' . $fulfillmentId;
+
+        return $url . $filterParams;
     }
 
     public function getCustomersUrl($id = 0, $parameters = [])
