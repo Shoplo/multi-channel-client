@@ -20,8 +20,8 @@ class OmnisaleOrderFulfillments
     public $tracking_company;
 
     /**
-     * @var string
-     * @Serializer\Type("string")
+     * @var string[]
+     * @Serializer\Type("array<string>")
      */
     public $tracking_numbers;
 
@@ -32,8 +32,8 @@ class OmnisaleOrderFulfillments
     public $tracking_urls;
 
     /**
-     * @var string
-     * @Serializer\Type("string")
+     * @var string[]
+     * @Serializer\Type("array<string>")
      */
     public $tracking_data;
 

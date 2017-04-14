@@ -44,12 +44,9 @@ class OmnisaleOrderResource
     public function createOrderFullfilments($id, OmnisaleOrderFulfillments $fulfillments)
     {
         $ordersUrl = $this->omnisaleClient->getOrdersFulfillmentsUrl($id);
-        print_r($ordersUrl);exit;
         $data = $this->omnisaleClient->serializer->serialize($fulfillments, 'json');
-//        print_r(\GuzzleHttp\json_decode($data, true));exit;
-        $response = $this->omnisaleClient->apiClient->post($ordersUrl, \GuzzleHttp\json_decode($data, true));
-        print_r($response);exit;
-        return $this->omnisaleClient->serializer->deserialize($response, OmnisaleOrder::class, 'json');
+
+        return $this->omnisaleClient->apiClient->post($ordersUrl, $data);
     }
 
     /**

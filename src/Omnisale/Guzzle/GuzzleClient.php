@@ -123,20 +123,18 @@ class GuzzleClient
         }
     }
 
-    public function post($url, $data = [], $headers = [], $isMultipart = false)
+    public function post($url, $data = [], $headers = [], $isMultipart = true)
     {
         try
         {
-            $url .= '?' . http_build_query($data);
             $headers = array_merge($headers, $this->getHeaders());
-
             $rsp = $this->guzzle->request(
                 'POST',
                 $url,
                 [
-                    ($isMultipart ? 'multipart' : 'form_params') => [],
                     'auth'                                       => 'oauth',
                     'headers'                                    => $headers,
+                    'body'                                       => $data,
                 ]
             );
 
