@@ -3,12 +3,13 @@
   "version": "1.0",
   "autoload": {
     "psr-0": {
-      "Omnisale": "src/"
+      "ShoploMulti": "src/"
     }
   },
   "require": {
     "guzzlehttp/oauth-subscriber": "^0.3.0",
     "jms/serializer": "dev-master",
-    "symfony/property-access": "^3.2"
+    "symfony/property-access": "^3.2",
+    "phpunit/phpunit": "^5.7"
   }
 }
