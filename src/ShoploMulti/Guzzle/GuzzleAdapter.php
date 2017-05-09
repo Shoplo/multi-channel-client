@@ -13,21 +13,8 @@ class GuzzleAdapter implements ShoploMultiAdapterInterface
 
     public function __construct(\GuzzleHttp\Client $guzzle, $accessToken = null)
     {
-//        $this->serializer = SerializerBuilder::create()->build();
         $this->guzzle = $guzzle;
         $this->accessToken = $accessToken;
-//        $this->guzzle = new \GuzzleHttp\Client([
-//            'base_uri' => $config['apiBaseUrl'],
-//            'headers'  => $this->getHeaders(),
-//        ]);
-
-//        $this->publicKey = $config['publicKey'];
-//        $this->secretKey = $config['secretKey'];
-//        $this->callbackUrl = $config['callbackUrl'];
-//        $this->accessToken = $config['accessToken'];
-//        $this->refreshToken = $config['refreshToken'];
-//        $this->apiBaseUri = $config['apiBaseUrl'];
-//        $this->scope = $config['scope'];
     }
 
     /**
