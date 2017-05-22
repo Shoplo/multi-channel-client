@@ -44,7 +44,7 @@ class ShoploMultiCustomerResourceTest extends ShoploMultiBaseTest
         $this->assertEquals(0, $customer->orders_count);
         $this->assertNull($customer->tax_exempt);
         $this->assertEquals(0, $customer->total_spent);
-//        $this->assertFalse($customer->verified_email);//todo
+        $this->assertFalse($customer->verified_email);
         $this->assertNull($customer->last_order_id);
         $this->assertNull($customer->last_order_date);
         $this->assertEquals("PLN", $customer->currency);

@@ -50,8 +50,8 @@ class ShoploMultiOrderCustomer
     public $orders_count;
 
     /**
-     * @var string
-     * @Serializer\Type("string")
+     * @var boolean
+     * @Serializer\Type("boolean")
      */
     public $tax_exempt;
 

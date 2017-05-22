@@ -109,14 +109,14 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
         $this->assertInstanceOf(ShoploMultiOrderCustomer::class, $customer);
         $this->assertInternalType(\PHPUnit_Framework_Constraint_IsType::TYPE_INT, $customer->id);
         $this->assertTrue($customer->accepts_marketing);
-        $this->assertEquals('asd@asd.pl', $customer->email);
-        $this->assertEquals('Michał', $customer->first_name);
+        $this->assertEquals('test@test.com', $customer->email);
+        $this->assertEquals('Jan', $customer->first_name);
         $this->assertEquals('Kowalski', $customer->last_name);
         $this->assertEquals('notatka', $customer->note);
         $this->assertEquals(49, $customer->orders_count);
-        $this->assertNull($customer->tax_exempt);
+        $this->assertFalse($customer->tax_exempt);
         $this->assertEquals(483469, $customer->total_spent);
-//        $this->assertFalse($customer->verified_email);//todo
+        $this->assertFalse($customer->verified_email);
         $this->assertNull($customer->last_order_id);
         $this->assertNull($customer->last_order_date);
         $this->assertEquals("PLN", $customer->currency);
@@ -124,7 +124,7 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
         $this->assertEquals('2017-03-31T07:53:27+00:00', $customer->created_at);
         $this->assertNull($customer->updated_at);
 
-//        $this->assertInstanceOf(ShoploMultiOrderBillingAddress::class, $order->billing_address);//todo
+        $this->assertNull($order->billing_address);
 
         /** @var ShoploMultiOrderShippingAddress $shippingAddress */
         $shippingAddress = $order->shipping_address;
@@ -137,9 +137,9 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
         $this->assertNull($shippingAddress->company);
         $this->assertNull($shippingAddress->country);
         $this->assertEquals('gb', $shippingAddress->country_code);
-//        $this->assertFalse($shippingAddress->default);
-        $this->assertEquals('Test', $shippingAddress->first_name);
-        $this->assertEquals('Test', $shippingAddress->last_name);
+        $this->assertFalse($shippingAddress->default);
+        $this->assertEquals('Jan', $shippingAddress->first_name);
+        $this->assertEquals('Kowalski', $shippingAddress->last_name);
         $this->assertNull($shippingAddress->latitude);
         $this->assertNull($shippingAddress->longitude);
         $this->assertEquals('123123123', $shippingAddress->phone);
@@ -202,7 +202,7 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
         $this->assertEquals('2017-03-31T07:53:29+00:00', $orderItem->created_at);
         $this->assertEquals('2017-04-11T14:37:19+00:00', $orderItem->updated_at);
 
-        $this->assertNull($order->tags);
+        $this->assertEmpty($order->tags);
 
         $orderFulfillments = $order->fulfillments;
         $this->assertNotEmpty($orderFulfillments);

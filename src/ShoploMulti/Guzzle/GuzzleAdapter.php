@@ -2,6 +2,7 @@
 
 namespace ShoploMulti\Guzzle;
 
+use ShoploMulti\Exception\ExceptionManager;
 use ShoploMulti\ShoploMultiAdapterInterface;
 
 class GuzzleAdapter implements ShoploMultiAdapterInterface
@@ -43,16 +44,23 @@ class GuzzleAdapter implements ShoploMultiAdapterInterface
     {
         $headers = array_merge($headers, $this->getHeaders());
 
-        $rsp = $this->guzzle->request(
-            'GET',
-            $url,
-            [
-                'auth'    => 'oauth',
-                'headers' => $headers,
-            ]
-        );
+        try{
 
-        return $rsp->getBody()->getContents();
+            $rsp = $this->guzzle->request(
+                'GET',
+                $url,
+                [
+                    'auth'    => 'oauth',
+                    'headers' => $headers,
+                ]
+            );
+
+            return $rsp->getBody()->getContents();
+
+        } catch( \Exception $e ) {
+
+            ExceptionManager::throwException($e);
+        }
     }
 
     /**
@@ -77,11 +85,11 @@ class GuzzleAdapter implements ShoploMultiAdapterInterface
                 ]
             );
 
-            return $rsp->getBody();
-        }
-        catch (\Exception $e)
-        {
-            throw $e;
+            return $rsp->getBody()->getContents();
+
+        } catch (\Exception $e) {
+
+            ExceptionManager::throwException($e);
         }
     }
 
@@ -107,11 +115,11 @@ class GuzzleAdapter implements ShoploMultiAdapterInterface
                 ]
             );
 
-            return $rsp->getBody();
-        }
-        catch (\Exception $e)
-        {
-            throw $e;
+            return $rsp->getBody()->getContents();
+
+        } catch (\Exception $e) {
+
+            ExceptionManager::throwException($e);
         }
     }
 
@@ -134,11 +142,10 @@ class GuzzleAdapter implements ShoploMultiAdapterInterface
             $json = \GuzzleHttp\json_decode($rsp->getBody(), true);
 
             return $json;
-        }
-        catch (\Exception $e)
-        {
-            throw $e;
+
+        } catch (\Exception $e) {
+
+            ExceptionManager::throwException($e);
         }
     }
-
 }

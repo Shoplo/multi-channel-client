@@ -4,7 +4,6 @@ require_once __DIR__ . '/autoload.php';
 
 ini_set('display_errors','TRUE');
 error_reporting(E_ALL);
-//error_reporting(E_ALL & ~E_NOTICE);
 
 define('SECRET_KEY','6kh7cej1e6o84coo0k80w0oocg080cswsk804wcc0g4k8kkoo');
 define('PUBLIC_KEY', '1rauyj5gfyasw8840s4444g40cksw0og4gwo8scsgcgw04kgoc');
@@ -51,10 +50,10 @@ $with = [
     ]
 ];
 
-$orders = $orderResource->getOrders($with);
+//$orders = $orderResource->getOrders($with);
 //$orders = $orderResource->getCount();
 //$orders = $orderResource->getOrder(6, $with);
-print_r($orders);exit;
+//print_r($orders);exit;
 
 //$fulfillments = new \ShoploMulti\Model\Order\ShoploMultiOrderFulfillments();
 //$fulfillments->tracking_company = 'Poczta Polska';
@@ -63,10 +62,10 @@ print_r($orders);exit;
 //$fulfillments->tracking_urls = [$trackingUrl];
 //$fulfillments->tracking_numbers = ['123123123123'];
 
-//$response = $orderResource->deleteOrderFullfilments(656, 230);
+//$response = $orderResource->deleteOrderFullfilments(656, 2302);
 //$response = $orderResource->createOrderFullfilments(656, $fulfillments);
 
-//print_r($response);exit;
+//var_dump($response);exit;
 
 //ORDERS
 
