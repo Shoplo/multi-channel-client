@@ -47,7 +47,7 @@ class ShoploMultiOrderFulFillmentResourceTest extends ShoploMultiBaseTest
      */
     public function testFailCreateFulfillment()
     {
-        $this->expectExceptionCode(400);
+        $this->expectException(ValidationException::class);
 
         $ordersResource = new ShoploMultiOrderResource($this->getClient($this->getFailCreateFulfillmentResponseArr()));
         $fulfillments = new \ShoploMulti\Model\Order\ShoploMultiOrderFulfillments();
@@ -89,7 +89,7 @@ class ShoploMultiOrderFulFillmentResourceTest extends ShoploMultiBaseTest
      */
     public function testFailDeleteFulfillment()
     {
-        $this->expectExceptionCode(404);
+        $this->expectException(NotFoundException::class);
 
         $ordersResource = new ShoploMultiOrderResource($this->getClient($this->getFailDeleteFulfillmentResponseArr()));
         $ordersResource->deleteOrderFullfilments(2, 656);

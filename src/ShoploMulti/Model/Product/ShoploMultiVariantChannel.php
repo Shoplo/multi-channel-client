@@ -2,7 +2,7 @@
 
 namespace ShoploMulti\Model\Product;
 
-use ShoploMulti\Parser\StringHelper;
+
 use JMS\Serializer\Annotation as Serializer;
 
 class ShoploMultiVariantChannel

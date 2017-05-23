@@ -2,7 +2,6 @@
 
 namespace ShoploMulti\Model\Customer;
 
-use ShoploMulti\Parser\StringHelper;
 use JMS\Serializer\Annotation as Serializer;
 
 class ShoploMultiCustomer

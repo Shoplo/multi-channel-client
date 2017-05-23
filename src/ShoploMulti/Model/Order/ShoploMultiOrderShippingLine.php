@@ -2,7 +2,7 @@
 
 namespace ShoploMulti\Model\Order;
 
-use ShoploMulti\Parser\StringHelper;
+
 use JMS\Serializer\Annotation as Serializer;
 
 class ShoploMultiOrderShippingLine
