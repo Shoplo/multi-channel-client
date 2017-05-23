@@ -11,8 +11,6 @@ define('CALLBACK_URL', 'http://127.0.0.1/omnisale-client/example.php');
 
 
 $accessToken = $refreshToken = null;
-$accessToken = 'ZDg0NTQ1YzQ2NjU3MWRjZjk1NjY3NmFkMmM5MWRkMTRkYzFhNDBjNTJiZTdiYzYxMjk0Mjk1OTU0NmM3ZTU0Yg';
-$refreshToken = 'OGZhZjcxMGU2YTU0ZTJlZDBiZmI3NjQwMmVjMmNkNTJjZTNmNTIxYzgzNDdkMTYwY2JmMTAzMmY4MzVmZmQyZg';
 
 $config = [
     'apiBaseUrl' => 'https://api.shoplo.io',
