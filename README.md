@@ -1,6 +1,6 @@
 # Shoplo Multi Client
 
-This php client enables php developers to communicate with Shoplo Multi with an oauth 2 authentication.
+This sdk enables php developers to communicate with Shoplo Multi with an oauth 2 authentication.
 
 ## Requirements
 
@@ -25,11 +25,11 @@ curl -sS https://getcomposer.org/installer | php
 php composer.phar require shoplo/shoplo-multi-client
 ```
 3. Add doctrine annotations to autoload file or front controller.
-```
+```php
 AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
 ```
 4. Require Composer's autoloader by adding the following line to your code.
-```
+```php
 require 'vendor/autoload.php';
 ```
 
@@ -37,7 +37,9 @@ require 'vendor/autoload.php';
 
 **Authentication using oauth 2.**
 
-```
+```php
+<?php
+
 session_start();
 require_once __DIR__ . '/autoload.php';
 
@@ -73,7 +75,7 @@ $response = $shoploMultiClient->authorize();
 
 **Orders resource.**
 
-```
+```php
 $orderResource = new \ShoploMulti\Resource\ShoploMultiOrderResource($shoploMultiClient);
 
 $with = [
@@ -103,7 +105,7 @@ $response = $orderResource->createOrderFullfilments(6, $fulfillments);
 
 **Products resource.**
 
-```
+```php
 $productResource = new \ShoploMulti\Resource\ShoploMultiProductResource($shoploMultiClient);
 
 $with = [
@@ -123,7 +125,7 @@ $response = $productResource->getCount();
 
 **Customers resource.**
 
-```
+```php
 $customerResource = new \ShoploMulti\Resource\ShoploMultiCustomerResource($shoploMultiClient);
 
 $response = $customerResource->getCustomers();
