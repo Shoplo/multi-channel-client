@@ -50,7 +50,7 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
         $ordersCollection = $ordersResource->getOrders($with);
 
         $this->assertInstanceOf(ShoploMultiOrdersCollection::class, $ordersCollection);
-        $this->assertCount(50, $ordersCollection->getIterator());
+        $this->assertCount(12, $ordersCollection->getIterator());
         $this->assertEquals(7, $ordersCollection->pages);
         $this->assertEquals(328, $ordersCollection->total);
 
@@ -61,7 +61,7 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
         $this->assertEquals(2, $order->customer_id);
         $this->assertEquals('1466', $order->external_order_id);
         $this->assertEquals('7670', $order->external_customer_id);
-//        $this->assertFalse($order->buyer_accepts_marketing);//todo
+        $this->assertTrue($order->buyer_accepts_marketing);
         $this->assertNull($order->browser_ip);
         $this->assertNull($order->variant_landing_url);
         $this->assertNull($order->cancel_reason);
