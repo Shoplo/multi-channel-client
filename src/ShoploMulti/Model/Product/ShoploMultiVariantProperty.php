@@ -14,12 +14,6 @@ class ShoploMultiVariantProperty
     public $parent_property_id;
 
     /**
-     * @var int
-     * @Serializer\Type("integer")
-     */
-    public $external_id;
-
-    /**
      * @var string
      * @Serializer\Type("string")
      */
@@ -30,4 +24,10 @@ class ShoploMultiVariantProperty
      * @Serializer\Type("string")
      */
     public $value;
+
+    /**
+     * @var integer
+     * @Serializer\Type("integer")
+     */
+    public $position;
 }

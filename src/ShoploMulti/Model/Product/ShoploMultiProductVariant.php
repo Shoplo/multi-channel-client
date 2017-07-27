@@ -42,18 +42,6 @@ class ShoploMultiProductVariant
      * @var integer
      * @Serializer\Type("integer")
      */
-    public $compare_at_price;
-
-    /**
-     * @var string
-     * @Serializer\Type("string")
-     */
-    public $img_url;
-
-    /**
-     * @var integer
-     * @Serializer\Type("integer")
-     */
     public $inventory_quantity;
 
     /**
@@ -69,12 +57,6 @@ class ShoploMultiProductVariant
     public $weight;
 
     /**
-     * @var string
-     * @Serializer\Type("string")
-     */
-    public $availability_description;
-
-    /**
      * @var integer
      * @Serializer\Type("integer")
      */
@@ -85,4 +67,10 @@ class ShoploMultiProductVariant
      * @Serializer\Type("string")
      */
     public $barcode;
+
+    /**
+     * @var ShoploMultiVariantProperty[]
+     * @Serializer\Type("array<ShoploMulti\Model\Product\ShoploMultiVariantProperty>")
+     */
+    public $properties;
 }

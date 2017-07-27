@@ -96,7 +96,7 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
         $this->assertEquals(9675, $order->subtotal_price);
         $this->assertEmpty($order->tax_lines);
         $this->assertArrayNotHasKey(0, $order->tax_lines);
-        $this->assertEquals('2380', $order->total_discounts);
+        $this->assertEquals(2380, $order->total_discounts);
         $this->assertEquals(11900, $order->total_line_items_price);
         $this->assertEquals(9520, $order->total_price);
         $this->assertEquals(2225, $order->total_tax);

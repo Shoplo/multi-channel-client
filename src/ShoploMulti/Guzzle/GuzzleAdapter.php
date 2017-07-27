@@ -57,7 +57,7 @@ class GuzzleAdapter implements ShoploMultiAdapterInterface
 
             return $rsp->getBody()->getContents();
 
-        } catch( \Exception $e ) {
+        } catch( \GuzzleHttp\Exception\ServerException $e ) {
 
             ExceptionManager::throwException($e);
         }

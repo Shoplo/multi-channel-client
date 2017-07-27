@@ -30,4 +30,16 @@ class ShoploMultiOrderShippingLine
      * @Serializer\Type("array<ShoploMulti\Model\Order\ShoploMultiTaxLine>")
      */
     public $tax_lines;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    public $created_at;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    public $updated_at;
 }

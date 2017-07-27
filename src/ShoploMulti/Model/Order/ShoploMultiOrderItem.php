@@ -4,8 +4,6 @@ namespace ShoploMulti\Model\Order;
 
 
 use JMS\Serializer\Annotation as Serializer;
-use ShoploMulti\Model\Product\ShoploMultiProductChannel;
-use ShoploMulti\Model\Product\ShoploMultiVariantChannel;
 use ShoploMulti\Model\Product\ShoploMultiVariantProperty;
 
 class ShoploMultiOrderItem
@@ -135,4 +133,16 @@ class ShoploMultiOrderItem
      * @Serializer\Type("string")
      */
     public $updated_at;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    public $order;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    public $order_fulfillment;
 }

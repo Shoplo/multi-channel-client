@@ -13,7 +13,6 @@ class ShoploMultiProduct
      */
     public $id;
 
-
     /**
      * @var string
      * @Serializer\Type("string")
@@ -21,28 +20,58 @@ class ShoploMultiProduct
     public $title;
 
     /**
+     * @var int
+     * @Serializer\Type("integer")
+     */
+    public $product_id;
+
+    /**
      * @var string
      * @Serializer\Type("string")
      */
-    public $img_url;
+    public $short_description;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    public $description;
+
+    /**
+     * @var integer
+     * @Serializer\Type("integer")
+     */
+    public $width;
+
+    /**
+     * @var integer
+     * @Serializer\Type("integer")
+     */
+    public $height;
+
+    /**
+     * @var integer
+     * @Serializer\Type("integer")
+     */
+    public $depth;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    public $diameter;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    public $measure_unit;
 
     /**
      * @var boolean
      * @Serializer\Type("boolean")
      */
     public $visibility;
-
-    /**
-     * @var string
-     * @Serializer\Type("string")
-     */
-    public $currency_code;
-
-    /**
-     * @var integer
-     * @Serializer\Type("integer")
-     */
-    public $channels_count;
 
     /**
      * @var string
@@ -57,14 +86,26 @@ class ShoploMultiProduct
     public $updated_at;
 
     /**
-     * @var ShoploMultiProductDetails
-     * @Serializer\Type("ShoploMulti\Model\Product\ShoploMultiProductDetails")
-     */
-    public $details;
-
-    /**
      * @var ShoploMultiProductVariant[]
      * @Serializer\Type("array<ShoploMulti\Model\Product\ShoploMultiProductVariant>")
      */
     public $variants;
+
+    /**
+     * @var ShoploMultiProductImage[]
+     * @Serializer\Type("array<ShoploMulti\Model\Product\ShoploMultiProductImage>")
+     */
+    public $images;
+
+    /**
+     * @var string[]
+     * @Serializer\Type("array<string>")
+     */
+    public $tags;
+
+    /**
+     * @var ShoploMultiVariantProperty[]
+     * @Serializer\Type("array<ShoploMulti\Model\Product\ShoploMultiVariantProperty>")
+     */
+    public $variants_properties;
 }

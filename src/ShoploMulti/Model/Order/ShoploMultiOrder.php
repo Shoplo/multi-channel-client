@@ -169,8 +169,8 @@ class ShoploMultiOrder
     public $tax_lines;
 
     /**
-     * @var string
-     * @Serializer\Type("string")
+     * @var integer
+     * @Serializer\Type("integer")
      */
     public $total_discounts;
 
