@@ -5,7 +5,7 @@ namespace ShoploMulti\Model\User;
 
 use JMS\Serializer\Annotation as Serializer;
 
-class ShoploMultiUser
+class ShoploMultiUserShop
 {
     /**
      * @var int
@@ -20,10 +20,10 @@ class ShoploMultiUser
     public $email;
 
     /**
-     * @var ShoploMultiUserShop
-     * @Serializer\Type("ShoploMulti\Model\User\ShoploMultiUserShop")
+     * @var string
+     * @Serializer\Type("string")
      */
-    public $shop;
+    public $lang;
 
     /**
      * @var string
