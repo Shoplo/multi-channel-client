@@ -263,4 +263,10 @@ class ShoploMultiOrder
      * @Serializer\Type("array<ShoploMulti\Model\Order\ShoploMultiOrderFulfillments>")
      */
     public $fulfillments;
+
+    /**
+     * @var ShoploMultiOrderShopChannel
+     * @Serializer\Type("ShoploMulti\Model\Order\ShoploMultiOrderShopChannel")
+     */
+    public $shop_channel;
 }
