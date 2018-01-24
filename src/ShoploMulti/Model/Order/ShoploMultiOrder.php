@@ -16,6 +16,18 @@ class ShoploMultiOrder
      * @var int
      * @Serializer\Type("integer")
      */
+    public $channel_id;
+
+    /**
+     * @var int
+     * @Serializer\Type("integer")
+     */
+    public $shop_channel_id;
+
+    /**
+     * @var int
+     * @Serializer\Type("integer")
+     */
     public $customer_id;
 
     /**
