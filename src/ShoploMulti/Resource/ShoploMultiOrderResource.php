@@ -57,7 +57,20 @@ class ShoploMultiOrderResource
     public function updateOrderFullfilments($id, ShoploMultiOrderFulfillments $fulfillments)
     {
         $parameters = $this->shoploMultiClient->serializer->serialize($fulfillments, 'json');
-        return $this->shoploMultiClient->put($this->getOrdersFulfillmentsUrl($id, $fulfillments->id), $parameters);
+
+        return $this->shoploMultiClient->post($this->getOrdersFulfillmentsUrl($id, $fulfillments->id), $parameters);
+    }
+
+    /**
+     * @param $id
+     * @param ShoploMultiOrder $order
+     * @return mixed
+     */
+    public function updateOrder($id, ShoploMultiOrder $order)
+    {
+        $data = $this->shoploMultiClient->serializer->serialize($order, 'json');
+
+        return $this->shoploMultiClient->put($this->getOrdersUrl($id), $data);
     }
 
     public function deleteOrderFullfilments($id, $fulfillmentId)
