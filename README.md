@@ -35,7 +35,7 @@ require 'vendor/autoload.php';
 
 ## Example
 
-**Authentication using oauth 2.**
+**Authentication using sso auth.**
 
 ```php
 <?php
@@ -46,31 +46,32 @@ require_once __DIR__ . '/autoload.php';
 ini_set('display_errors','TRUE');
 error_reporting(E_ALL);
 
-define('SECRET_KEY','6kh7cej1e6o84coo0k80w0oocg080cswsk804wcc0g4k8kkoo');
-define('PUBLIC_KEY', '1rauyj5gfyasw8840s4444g40cksw0og4gwo8scsgcgw04kgoc');
-define('CALLBACK_URL', 'http://127.0.0.1/omnisale-client/example.php');
+define('SECRET_KEY', 'XXXX');
+define('PUBLIC_KEY', 'XXXX');
 
-$accessToken = $refreshToken = null;
+define('CALLBACK_URL', 'http://127.0.0.1/multi-channel-client/example.php');
 
-$config = [
-    'apiBaseUrl' => 'https://api.shoplo.io',
-    'publicKey' => PUBLIC_KEY,
-    'secretKey' => SECRET_KEY,
+$authUrl   = 'http://auth.shoplo.io';
+$ssoConfig = [
+    'apiBaseUrl'  => $authUrl,
+    'publicKey'   => PUBLIC_KEY,
+    'secretKey'   => SECRET_KEY,
     'callbackUrl' => CALLBACK_URL,
-    'accessToken' => $accessToken,
-    'refreshToken' => $refreshToken,
-    'scope' => 'scope_read_order scope_write_order scope_read_customer scope_write_customer scope_read_product scope_write_product',
 ];
 
-$guzzleConfig = [
-    'base_uri' => 'https://api.shoplo.io'
-];
+$apiUrl = 'http://api.shoplo.io';
 
-$guzzleAdapter = new \ShoploMulti\Guzzle\GuzzleAdapter(new \GuzzleHttp\Client($guzzleConfig));
-$guzzleAdapter->setAccessToken($accessToken);
-$shoploMultiClient = new \ShoploMulti\ShoploMultiClient($guzzleAdapter, \JMS\Serializer\SerializerBuilder::create()->build(), $config);
+$guzzleAdapter     = new \ShoploMulti\Guzzle\GuzzleAdapter(
+    new \GuzzleHttp\Client(['base_uri' => $apiUrl])
+);
+$shoploMultiClient = new \ShoploMulti\ShoploMultiClient(
+    $guzzleAdapter,
+    \JMS\Serializer\SerializerBuilder::create()->build(),
+    $apiUrl
+);
 
-$response = $shoploMultiClient->authorize();
+$shoploMultiClient->initSSOAuthClient($ssoConfig);
+$shoploMultiClient->authorize();
 ```
 
 **Orders resource.**
