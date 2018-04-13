@@ -8,12 +8,11 @@
 
 namespace ShoploMulti\Exception;
 
-
 class ExceptionManager
 {
     public static function throwException(\Exception $e)
     {
-        switch ($e->getCode()){
+        switch ($e->getCode()) {
             case 400:
                 throw new ValidationException($e);
                 break;

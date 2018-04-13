@@ -2,7 +2,6 @@
 
 namespace ShoploMulti\Model\Order;
 
-
 use JMS\Serializer\Annotation as Serializer;
 use ShoploMulti\Model\Product\ShoploMultiVariantProperty;
 

@@ -16,6 +16,12 @@ class ShoploMultiOrder
      * @var int
      * @Serializer\Type("integer")
      */
+    public $shipping_price;
+
+    /**
+     * @var int
+     * @Serializer\Type("integer")
+     */
     public $channel_id;
 
     /**
@@ -175,8 +181,8 @@ class ShoploMultiOrder
     public $subtotal_price;
 
     /**
-     * @var string[]
-     * @Serializer\Type("array<string>")
+     * @var ShoploMultiTaxLine[]
+     * @Serializer\Type("array<ShoploMulti\Model\Order\ShoploMultiTaxLine>")
      */
     public $tax_lines;
 
@@ -215,6 +221,12 @@ class ShoploMultiOrder
      * @Serializer\Type("string")
      */
     public $created_at;
+
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     */
+    public $external_created_at;
 
     /**
      * @var string

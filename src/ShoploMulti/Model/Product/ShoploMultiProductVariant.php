@@ -2,7 +2,6 @@
 
 namespace ShoploMulti\Model\Product;
 
-
 use JMS\Serializer\Annotation as Serializer;
 
 class ShoploMultiProductVariant

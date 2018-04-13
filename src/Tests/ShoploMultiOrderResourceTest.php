@@ -8,7 +8,6 @@
 
 namespace Tests;
 
-
 use GuzzleHttp\Psr7\Response;
 use ShoploMulti\Model\Collection\ShoploMultiOrdersCollection;
 use ShoploMulti\Model\Order\ShoploMultiOrder;
@@ -42,14 +41,19 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
                 'order.fulfillments',
                 'order.customer',
                 'order.shipping_lines',
-            ]
+            ],
         ];
 
-        $ordersResource = new ShoploMultiOrderResource($this->getClient($this->getResponseArr()));
+        $ordersResource = new ShoploMultiOrderResource(
+            $this->getClient($this->getResponseArr())
+        );
         /** @var ShoploMultiOrdersCollection $ordersCollection */
         $ordersCollection = $ordersResource->getOrders($with);
 
-        $this->assertInstanceOf(ShoploMultiOrdersCollection::class, $ordersCollection);
+        $this->assertInstanceOf(
+            ShoploMultiOrdersCollection::class,
+            $ordersCollection
+        );
         $this->assertCount(12, $ordersCollection->getIterator());
         $this->assertEquals(7, $ordersCollection->pages);
         $this->assertEquals(328, $ordersCollection->total);
@@ -66,7 +70,10 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
         $this->assertNull($order->variant_landing_url);
         $this->assertNull($order->cancel_reason);
         $this->assertNull($order->cancelled_at);
-        $this->assertEquals('1NUG9XygHc9gyN1pzVUbqNz93xN9z6Tc', $order->cart_token);
+        $this->assertEquals(
+            '1NUG9XygHc9gyN1pzVUbqNz93xN9z6Tc',
+            $order->cart_token
+        );
         $this->assertNull($order->closed_at);
         $this->assertEquals("PLN", $order->currency);
 
@@ -75,7 +82,10 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
 
         $discountCode = $discountCodes[0];
 
-        $this->assertInstanceOf(ShoploMultiOrderDiscountCode::class, $discountCode);
+        $this->assertInstanceOf(
+            ShoploMultiOrderDiscountCode::class,
+            $discountCode
+        );
         $this->assertEquals('Rabat dla klienta', $discountCode->code);
         $this->assertEquals(2380, $discountCode->amount);
         $this->assertEquals('percentage', $discountCode->type);
@@ -83,14 +93,20 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
         $this->assertEquals("test@test.com", $order->email);
         $this->assertEquals("pending", $order->financial_status);
         $this->assertNull($order->fulfillment_status);
-        $this->assertEquals('/checkout/3964/c7lyCCPfNiHTJAj3cbfIEvQraM6HYra8/beta', $order->landing_site);
+        $this->assertEquals(
+            '/checkout/3964/c7lyCCPfNiHTJAj3cbfIEvQraM6HYra8/beta',
+            $order->landing_site
+        );
         $this->assertEquals('#1466', $order->name);
         $this->assertNull($order->note);
         $this->assertNull($order->note_attributes);
         $this->assertEquals('1466', $order->order_number);
         $this->assertArrayHasKey(0, $order->payment_gateway_names);
         $this->assertEquals('przelew2', $order->payment_gateway_names[0]);
-        $this->assertEquals('https://check.shoplo.com/checkout/3964/c7lyCCPfNiHTJAj3cbfIEvQraM6HYra8/beta', $order->referring_site);
+        $this->assertEquals(
+            'https://check.shoplo.com/checkout/3964/c7lyCCPfNiHTJAj3cbfIEvQraM6HYra8/beta',
+            $order->referring_site
+        );
         $this->assertEquals('web', $order->source_name);
         $this->assertEquals('Nowe', $order->status);
         $this->assertEquals(9675, $order->subtotal_price);
@@ -107,7 +123,10 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
         /** @var ShoploMultiOrderCustomer $customer */
         $customer = $order->customer;
         $this->assertInstanceOf(ShoploMultiOrderCustomer::class, $customer);
-        $this->assertInternalType(\PHPUnit_Framework_Constraint_IsType::TYPE_INT, $customer->id);
+        $this->assertInternalType(
+            \PHPUnit_Framework_Constraint_IsType::TYPE_INT,
+            $customer->id
+        );
         $this->assertTrue($customer->accepts_marketing);
         $this->assertEquals('test@test.com', $customer->email);
         $this->assertEquals('Jan', $customer->first_name);
@@ -128,7 +147,10 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
 
         /** @var ShoploMultiOrderShippingAddress $shippingAddress */
         $shippingAddress = $order->shipping_address;
-        $this->assertInstanceOf(ShoploMultiOrderShippingAddress::class, $shippingAddress);
+        $this->assertInstanceOf(
+            ShoploMultiOrderShippingAddress::class,
+            $shippingAddress
+        );
 
         $this->assertEquals(50, $shippingAddress->id);
         $this->assertEquals('Testowa', $shippingAddress->address1);
@@ -147,8 +169,14 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
         $this->assertNull($shippingAddress->province_code);
         $this->assertEquals('12-123', $shippingAddress->zip);
         $this->assertNull($shippingAddress->tax_id);
-        $this->assertEquals('2017-03-31T07:53:29+00:00', $shippingAddress->created_at);
-        $this->assertEquals('2017-03-31T07:53:29+00:00', $shippingAddress->updated_at);
+        $this->assertEquals(
+            '2017-03-31T07:53:29+00:00',
+            $shippingAddress->created_at
+        );
+        $this->assertEquals(
+            '2017-03-31T07:53:29+00:00',
+            $shippingAddress->updated_at
+        );
 
         $orderItems = $order->order_items;
         $this->assertNotEmpty($orderItems);
@@ -165,8 +193,14 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
         $this->assertTrue($orderItem->requires_shipping);
         $this->assertEquals(0, $orderItem->weight);
         $this->assertEquals('8088', $orderItem->sku);
-        $this->assertEquals('SUKIENKA KONTRAFAŁDA - beż 6-1', $orderItem->title);
-        $this->assertEquals('SUKIENKA KONTRAFAŁDA - beż 6-1 - XL', $orderItem->name);
+        $this->assertEquals(
+            'SUKIENKA KONTRAFAŁDA - beż 6-1',
+            $orderItem->title
+        );
+        $this->assertEquals(
+            'SUKIENKA KONTRAFAŁDA - beż 6-1 - XL',
+            $orderItem->name
+        );
         $this->assertEquals('XL', $orderItem->variant_title);
 
         $variantProperies = $orderItem->variant_properties;
@@ -199,8 +233,14 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
         $this->assertEquals(2380, $orderItem->total_discount);
         $this->assertNull($orderItem->fulfillment_status);
         $this->assertTrue($orderItem->taxable);
-        $this->assertEquals('2017-03-31T07:53:29+00:00', $orderItem->created_at);
-        $this->assertEquals('2017-04-11T14:37:19+00:00', $orderItem->updated_at);
+        $this->assertEquals(
+            '2017-03-31T07:53:29+00:00',
+            $orderItem->created_at
+        );
+        $this->assertEquals(
+            '2017-04-11T14:37:19+00:00',
+            $orderItem->updated_at
+        );
 
         $this->assertEmpty($order->tags);
 
@@ -210,7 +250,10 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
         $this->assertArrayHasKey(0, $orderFulfillments);
 
         $orderFulfillment = $orderFulfillments[0];
-        $this->assertInstanceOf(ShoploMultiOrderFulfillments::class, $orderFulfillment);
+        $this->assertInstanceOf(
+            ShoploMultiOrderFulfillments::class,
+            $orderFulfillment
+        );
 
         $this->assertEquals(184, $orderFulfillment->id);
         $this->assertEquals('test', $orderFulfillment->tracking_company);
@@ -220,7 +263,10 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
 
         $this->assertNotEmpty($orderFulfillment->tracking_urls);
         $this->assertArrayHasKey(0, $orderFulfillment->tracking_urls);
-        $this->assertEquals('http://asd.pl', $orderFulfillment->tracking_urls[0]);
+        $this->assertEquals(
+            'http://asd.pl',
+            $orderFulfillment->tracking_urls[0]
+        );
 
         $this->assertNotEmpty($orderFulfillment->tracking_data);
         $this->assertArrayHasKey(0, $orderFulfillment->tracking_data);
@@ -230,8 +276,14 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
         $this->assertArrayHasKey(0, $orderFulfillment->order_items_ids);
         $this->assertEquals(14, $orderFulfillment->order_items_ids[0]);
 
-        $this->assertEquals('2017-04-11T14:37:19+00:00', $orderFulfillment->created_at);
-        $this->assertEquals('2017-04-11T14:37:19+00:00', $orderFulfillment->updated_at);
+        $this->assertEquals(
+            '2017-04-11T14:37:19+00:00',
+            $orderFulfillment->created_at
+        );
+        $this->assertEquals(
+            '2017-04-11T14:37:19+00:00',
+            $orderFulfillment->updated_at
+        );
 
         $shippingLines = $order->shipping_lines;
         $this->assertNotEmpty($shippingLines);
@@ -239,12 +291,14 @@ class ShoploMultiOrderResourceTest extends ShoploMultiBaseTest
         $this->assertArrayHasKey(0, $shippingLines);
 
         $shippingLine = $shippingLines[0];
-        $this->assertInstanceOf(ShoploMultiOrderShippingLine::class, $shippingLine);
+        $this->assertInstanceOf(
+            ShoploMultiOrderShippingLine::class,
+            $shippingLine
+        );
 
         $this->assertEquals(6, $shippingLine->id);
         $this->assertEquals(0, $shippingLine->price);
         $this->assertEquals('Odbiór osobisty', $shippingLine->title);
         $this->assertEmpty($shippingLine->tax_lines);
-
     }
 }

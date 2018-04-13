@@ -19,16 +19,22 @@ class ShoploMultiCustomerResourceTest extends ShoploMultiBaseTest
     {
         return [new Response(200, [], $this->getResponseData('customers'))];
     }
+
     /**
      * @test
      */
     public function testGetCustomers()
     {
-        $customersResource = new ShoploMultiCustomerResource($this->getClient($this->getResponseArr()));
+        $customersResource = new ShoploMultiCustomerResource(
+            $this->getClient($this->getResponseArr())
+        );
         /** @var ShoploMultiCustomersCollection $customersCollection */
         $customersCollection = $customersResource->getCustomers();
 
-        $this->assertInstanceOf(ShoploMultiCustomersCollection::class, $customersCollection);
+        $this->assertInstanceOf(
+            ShoploMultiCustomersCollection::class,
+            $customersCollection
+        );
         $this->assertCount(20, $customersCollection->getIterator());
         $this->assertEquals(1, $customersCollection->pages);
 
@@ -52,11 +58,11 @@ class ShoploMultiCustomerResourceTest extends ShoploMultiBaseTest
         $this->assertEquals('2017-03-31T07:53:28+00:00', $customer->created_at);
         $this->assertNull($customer->updated_at);
 
-        $newCustomer = new ShoploMultiCustomer();
-        $newCustomer->id = 9999;
+        $newCustomer                    = new ShoploMultiCustomer();
+        $newCustomer->id                = 9999;
         $newCustomer->accepts_marketing = false;
-        $newCustomer->email = 'test@test.pl';
-        $newCustomer->total_spent = 1000;
+        $newCustomer->email             = 'test@test.pl';
+        $newCustomer->total_spent       = 1000;
 
         $customersCollection->addItem($newCustomer, 1234);
 

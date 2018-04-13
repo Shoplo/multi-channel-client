@@ -8,7 +8,6 @@
 
 namespace ShoploMulti\Exception;
 
-
 class BaseException extends \Exception
 {
     protected $responseParsed;
@@ -16,7 +15,11 @@ class BaseException extends \Exception
     public function __construct(\Exception $previous, $body = null)
     {
         $this->responseParsed = serialize($body);
-        parent::__construct($previous->getMessage(), $previous->getCode(), $previous);
+        parent::__construct(
+            $previous->getMessage(),
+            $previous->getCode(),
+            $previous
+        );
     }
 
     /**

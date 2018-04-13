@@ -22,16 +22,16 @@ abstract class ShoploMultiBaseTest extends TestCase
     protected function getClient($responseArr)
     {
         $config = [
-            'apiBaseUrl' => '',
-            'publicKey' => '',
-            'secretKey' => '',
-            'callbackUrl' => '',
-            'accessToken' => '',
+            'apiBaseUrl'   => '',
+            'publicKey'    => '',
+            'secretKey'    => '',
+            'callbackUrl'  => '',
+            'accessToken'  => '',
             'refreshToken' => '',
-            'scope' => 'scope_read_order scope_write_order scope_read_customer scope_write_customer scope_read_product scope_write_product',
+            'ssoAppId'     => '',
         ];
 
-        $client = new Client(
+        $client        = new Client(
             [
                 'handler' => HandlerStack::create(
                     new MockHandler(
@@ -41,11 +41,17 @@ abstract class ShoploMultiBaseTest extends TestCase
             ]
         );
         $guzzleAdapter = new GuzzleAdapter($client);
-        return new ShoploMultiClient($guzzleAdapter, SerializerBuilder::create()->build(), $config);
+
+        return new ShoploMultiClient(
+            $guzzleAdapter,
+            SerializerBuilder::create()->build(),
+            $config
+        );
     }
 
     /**
      * @param  string $name
+     *
      * @return string
      */
     protected function getResponseData($name)

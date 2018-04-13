@@ -5,7 +5,8 @@ namespace ShoploMulti\Model\Collection;
 use JMS\Serializer\Annotation as Serializer;
 use ShoploMulti\Model\Product\ShoploMultiVariantProperty;
 
-class ShoploMultiProductVariantsPropertiesCollection extends ShoploMultiBaseCollection
+class ShoploMultiProductVariantsPropertiesCollection extends
+    ShoploMultiBaseCollection
 {
     /**
      * @var ShoploMultiVariantProperty[]

@@ -8,7 +8,6 @@
 
 namespace ShoploMulti\Exception;
 
-
 class NotFoundException extends BaseException
 {
 }
