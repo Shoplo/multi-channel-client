@@ -1895,12 +1895,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Shoplo/sso-auth.git",
-                "reference": "b029bbabc6e04731cbe0a13232f2a746c26c7001"
+                "reference": "457035cfb3126daed940df038af1971fe1597fbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Shoplo/sso-auth/zipball/b029bbabc6e04731cbe0a13232f2a746c26c7001",
-                "reference": "b029bbabc6e04731cbe0a13232f2a746c26c7001",
+                "url": "https://api.github.com/repos/Shoplo/sso-auth/zipball/457035cfb3126daed940df038af1971fe1597fbc",
+                "reference": "457035cfb3126daed940df038af1971fe1597fbc",
                 "shasum": ""
             },
             "require": {
@@ -1913,7 +1913,7 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2018-04-12T15:00:51+00:00"
+            "time": "2018-04-17T09:18:07+00:00"
         },
         {
             "name": "symfony/yaml",

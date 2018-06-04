@@ -10,7 +10,6 @@
     "guzzlehttp/oauth-subscriber": "^0.3.0",
     "jms/serializer": "^1.0",
     "doctrine/annotations": "1.4.*",
-    "phpunit/phpunit": "5.7.*",
     "shoplo/sso-auth": "dev-master"
   },
   "config": {
